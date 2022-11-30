@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9cb2328-93ba-460f-a3c9-5d00d2a9d325" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publication_jie/cvpr2022_main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publication_jie/icml2021_main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publication_jie/neurips2021_main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/publication_jie/neurips2022_main.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669839770369</updated>
       <workItem from="1669839776644" duration="204000" />
-      <workItem from="1669840131733" duration="6615000" />
+      <workItem from="1669840131733" duration="6668000" />
     </task>
     <servers />
   </component>
