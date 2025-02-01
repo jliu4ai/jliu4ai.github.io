@@ -103,9 +103,39 @@
     /* 右侧内容的实际容器 */
     .col-12.col-lg-8 .content-wrapper {
       width: 80%;
+      max-width: 80%;
       padding: 20px;
       margin: 0;
       box-sizing: border-box;
+    }
+
+    /* 所有右侧内容区域统一样式 */
+    .content-wrapper .article-style,
+    .content-wrapper h3,
+    .content-wrapper div[style*="height: 250px"],
+    .content-wrapper #news,
+    .content-wrapper #news + div,
+    .content-wrapper #publications + div,
+    .content-wrapper #about + div,
+    .content-wrapper #research-interests + div,
+    .content-wrapper #hobbies + div {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 新闻滚动窗口的特定样式 */
+    .content-wrapper div[style*="height: 250px; overflow-y: auto"] {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;
+      margin: 0 !important;
+      padding: 10px !important;
+      border-radius: 5px !important;
+      background-color: #fafafa !important;
     }
 
     /* 确保新闻区域的特定样式 */
