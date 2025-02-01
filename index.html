@@ -52,31 +52,31 @@
 
     .container {
       max-height: 100vh;
+      width: 1200px;  /* 固定宽度 */
+      margin: 0 auto;  /* 水平居中 */
       padding: 20px;
-      max-width: 1200px;  /* 限制最大宽度 */
-      margin: 0 auto;     /* 居中容器 */
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     /* 左侧个人信息固定 */
     .col-12.col-lg-4 {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-100%); /* 向左移动自身宽度 */
+      position: absolute;
       width: 33.333333%;
-      max-width: 400px;  /* 限制最大宽度 */
       height: 100vh;
       padding: 20px;
+      left: 0;
     }
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      position: fixed;
-      left: 50%;
+      position: absolute;
       width: 66.666667%;
-      max-width: 800px;  /* 限制最大宽度 */
       height: 100vh;
       overflow-y: auto;
       padding: 20px;
+      right: 0;
     }
 
     /* 自定义滚动条样式 */
