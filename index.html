@@ -184,9 +184,20 @@
     }
 
     /* 调整 news 滑动窗口的样式 */
-    div[style*="height: 250px"] {
-      height: 250px !important;  /* 保持原来的高度 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
       width: 95% !important;     /* 增加宽度 */
+      height: 250px !important;  /* 保持原来的高度 */
+      overflow-y: auto;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+
+    /* 或者直接给 news 容器添加一个特定的类 */
+    .news-container {
+      width: 95% !important;
+      height: 250px !important;
       overflow-y: auto;
       border: 1px solid #eee;
       padding: 10px;
