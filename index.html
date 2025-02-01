@@ -204,6 +204,19 @@
       border-radius: 5px;
       background-color: #fafafa;
     }
+
+    /* 添加更强的选择器 */
+    #news div[style*="height: 250px"],
+    #about div[style*="height: 250px"],
+    .home-section div[style*="height: 250px"],
+    div[style*="height: 250px; overflow-y: auto"] {
+      width: 95% !important;
+      min-width: 95% !important;
+      max-width: 95% !important;
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;  /* 更明显的边框 */
+      margin: 0 auto !important;          /* 居中显示 */
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
 <script>
