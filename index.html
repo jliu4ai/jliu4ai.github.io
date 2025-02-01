@@ -39,23 +39,24 @@
       padding: 0 5%;
       display: flex;
       flex-wrap: wrap;
+      min-width: 1000px;
     }
 
-    /* 左侧个人信息 - 向右移动 */
+    /* 左侧个人信息 - 固定相对位置 */
     .col-12.col-lg-4 {
         position: fixed;
-        left: calc(15% + 150px);  /* 增加150px的右移 */
+        left: calc(15% + 150px);
         width: 300px;
         height: 100vh;
         padding: 20px;
         z-index: 100;
     }
 
-    /* 右侧内容 - 相应调整 */
+    /* 右侧内容 - 固定相对位置 */
     .col-12.col-lg-8 {
         position: relative;
-        margin-left: calc(15% + 300px);  /* 对应左侧的新位置 */
-        width: calc(85% - 300px);  /* 保持宽度计算 */
+        margin-left: calc(15% + 300px);
+        width: calc(85% - 300px);
         padding: 0 20px;
     }
 
@@ -77,8 +78,8 @@
         box-sizing: border-box !important;
     }
 
-    /* 响应式布局调整 */
-    @media (max-width: 991px) {
+    /* 响应式布局调整 - 增加最小宽度限制 */
+    @media (max-width: 1200px) {  /* 增加断点宽度 */
         .col-12.col-lg-4 {
             position: relative;
             left: 0;
@@ -93,19 +94,12 @@
             width: 100%;
             padding: 20px;
         }
+    }
 
-        .article-style, 
-        #news + div,
-        #publications + div,
-        #about + div,
-        #research-interests + div,
-        #hobbies + div,
-        div[style*="height: 250px; overflow-y: auto"],
-        .content-wrapper,
-        #news,
-        .col-12.col-lg-8 .content-wrapper {
-            width: 100% !important;
-            max-width: 100% !important;
+    /* 当屏幕小于最小宽度时添加水平滚动 */
+    @media (max-width: 1000px) {
+        body {
+            overflow-x: auto;
         }
     }
 
