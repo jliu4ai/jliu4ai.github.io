@@ -71,11 +71,12 @@
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      width: 2600;  /* 简化为容器剩余宽度 */
+      width: 2600px;  /* 直接设置固定宽度 */
       height: 100vh;
       overflow-y: auto;
       padding: 0;
       margin: 0;
+      flex-shrink: 0;  /* 防止flex布局压缩 */
     }
 
     /* 修改所有右侧内容的直接容器 */
