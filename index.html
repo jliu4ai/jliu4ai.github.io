@@ -54,7 +54,7 @@
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
-      width: 1600px;
+      width: 1600px;  /* 固定一个合适的总宽度 */
       height: 100vh;
       display: flex;
       padding: 0;
@@ -71,7 +71,7 @@
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      width: calc(100vw - 400px - ((100vw - 2000px) / 2));
+      width: calc(100% - 400px);  /* 简化为容器剩余宽度 */
       height: 100vh;
       overflow-y: auto;
       padding: 0;
