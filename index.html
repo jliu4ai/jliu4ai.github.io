@@ -24,6 +24,45 @@
     h1, h2, h3 {font-family: 'Comic Neue', sans-serif;}
     .compact-paragraph {margin: 5px 0; /* 只调整这个类的段落的上下间距 */}
     .link:hover { color: #1565c0; } /* CSS link hover (green) */
+    /* 添加平滑滚动 */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* 添加渐变动画效果 */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* 悬停效果 */
+    .network-icon li a:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+    
+    /* 渐变背景 */
+    .home-section {
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+    
+    /* 卡片式设计 */
+    .media.stream-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+    
+    .media.stream-item:hover {
+      transform: translateY(-5px);
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
 <script>
