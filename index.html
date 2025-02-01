@@ -73,10 +73,23 @@
       width: 75%;
       height: 100vh;
       overflow-y: auto;
-      padding: 20px 20px 20px 20px;
+      padding: 0;
       flex-shrink: 0;
-      margin-right: -20px;
-      padding-right: 40px;
+      position: relative;
+    }
+
+    /* 新增：右侧内容的实际容器 */
+    .col-12.col-lg-8 .content-wrapper {
+      width: 80%;
+      padding: 20px;
+      margin-left: 0;
+    }
+
+    /* 修改所有右侧内容的直接容器 */
+    .article-style, 
+    #news + div,
+    #publications + div {
+      width: 80%;
     }
 
     /* 自定义滚动条样式 */
@@ -371,65 +384,65 @@
             </div>
           </div>
           <div class="col-12 col-lg-8">
+            <div class="content-wrapper">
+              <h3>About Me</h3>
+              <div class="article-style">
+                <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a>  Ph.D. candidate at <a href="VISLAB https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
+                  Unversity of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
+                  <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
+                  I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>. </p>
+              </div>
 
-            <h3>About Me</h3>
+              <h3>Research Interests</h3>
+              <div class="article-style">
+                <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics: </p>
+                <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
+                <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
+                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application<p>
+              </div>
 
-            <div class="article-style">
-              <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a>  Ph.D. candidate at <a href="VISLAB https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
-                Unversity of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
-                <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
-                I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>. </p>
-            
-            <h3>Research Interests</h3>
-            <div class="article-style">
-              <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics: </p>
-              <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
-              <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
-              <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application<p>
-            
-            <h3>Hobbies</h3>
-            <div class="article-style">
-              <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
-                Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
-              </p>
-            </div>
-    <h3 id="news">News</h3>
-    <div style="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;">
-      <ul>
-        <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
-        <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
-        <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot </a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
-        <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
-        <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
-        <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
-        <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
-        <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
-        <li><b>[Sept 2021]</b> I joined in VISLAB as a Phd candidate.</li>
-      </ul>
-    </div>
+              <h3>Hobbies</h3>
+              <div class="article-style">
+                <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
+                  Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
+                </p>
+              </div>
 
-    <h3 id="publications">Publications</h3>
-    <div class="article-style">
-      <h4>2024</h4>
-      <ul>
-        <li>
-          <b>CaPo: Causal Prompting for Embodied Agents</b><br>
-          <i>International Conference on Learning Representations (ICLR), 2024</i><br>
-          <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
-          [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
-          [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
-        </li>
-        <li>
-          <b>CPlot: Interactive Segmentation with Contrastive Plot Learning</b><br>
-          <i>European Conference on Computer Vision (ECCV), 2024</i><br>
-          <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
-          [<a href="#" target="_blank">Paper</a>]
-          [<a href="#" target="_blank">Code</a>]
-        </li>
-      </ul>
-    </div>
-            </div>
-            <div class="row">
+              <h3 id="news">News</h3>
+              <div style="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;">
+                <ul>
+                  <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
+                  <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
+                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot </a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
+                  <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
+                  <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
+                  <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
+                  <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
+                  <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
+                  <li><b>[Sept 2021]</b> I joined in VISLAB as a Phd candidate.</li>
+                </ul>
+              </div>
+
+              <h3 id="publications">Publications</h3>
+              <div class="article-style">
+                <h4>2024</h4>
+                <ul>
+                  <li>
+                    <b>CaPo: Causal Prompting for Embodied Agents</b><br>
+                    <i>International Conference on Learning Representations (ICLR), 2024</i><br>
+                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>CPlot: Interactive Segmentation with Contrastive Plot Learning</b><br>
+                    <i>European Conference on Computer Vision (ECCV), 2024</i><br>
+                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    [<a href="#" target="_blank">Paper</a>]
+                    [<a href="#" target="_blank">Code</a>]
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
