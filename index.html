@@ -22,7 +22,31 @@
   <style>
     body {
       font-family: 'Comic Neue', sans-serif;
-      font-size: 15px;  /* 减小基础字体大小一号 */
+      font-size: 15px;
+      overflow: hidden; /* 防止滚动 */
+      position: fixed;  /* 固定位置 */
+      width: 100%;
+      height: 100%;
+    }
+
+    .page-body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .home-section {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 30px 0;
+    }
+
+    .container {
+      max-height: 100vh;
+      padding: 20px;
     }
     
     /* 调整头像大小 */
@@ -180,7 +204,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper">
+<body id="top" class="page-wrapper">
   <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
 
   <div class="page-body">
