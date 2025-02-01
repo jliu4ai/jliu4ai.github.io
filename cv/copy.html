@@ -20,68 +20,196 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/css/jie.css"/>
   <style>
+    /* 基础样式设置 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 1200px; /* 设置最小宽度 */
+      width: 100%;
+      overflow-x: auto !important; /* 强制启用水平滚动 */
+    }
+
     body {
       font-family: 'Comic Neue', sans-serif;
       font-size: 15px;
-      overflow: auto;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      margin: 0;
       background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      position: relative;
     }
 
+    /* 页面包装器 */
+    .page-wrapper {
+      position: relative;
+      min-width: 1200px;
+      width: 100%;
+      overflow-x: auto !important;
+    }
+
+    /* 页面主体 */
     .page-body {
       position: relative;
+      min-width: 1200px;
       width: 100%;
-      height: auto;
-      overflow: visible;
-      margin: 0;
+      overflow-x: visible;
     }
 
+    /* 主容器样式 */
+    .container {
+      position: relative;
+      width: 1400px; /* 固定宽度 */
+      min-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* 主要区域 */
     .home-section {
       position: relative;
       width: 100%;
-      height: auto;
+      min-width: 1200px;
       overflow: visible;
-      padding: 0;
-      margin: 0;
-      top: 0;
     }
 
-    .container {
-      position: relative;
-      left: 250px;
-      width: 2200px;
-      min-height: 100vh;
-      display: flex;
-      padding: 0;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
-    /* 左侧个人信息固定 */
+    /* 左侧个人信息 */
     .col-12.col-lg-4 {
       position: fixed;
-      width: 350px;
+      left: calc(50% - 400px);
+      width: 300px;
       height: 100vh;
       padding: 20px;
-      flex-shrink: 0;
-      top: 0;
-      left: 250px;
+      z-index: 100;
     }
 
-    /* 右侧内容可滚动 */
+    /* 右侧内容 */
     .col-12.col-lg-8 {
       position: relative;
-      width: 1730px;
-      height: auto;
-      overflow-y: visible;
+      margin-left: calc(50% - 50px);
+      width: 800px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* 确保所有内容容器不会溢出 */
+    .content-wrapper {
+      width: 100%;
+      max-width: 800px;
+      box-sizing: border-box;
+    }
+
+    /* 移除所有可能影响滚动的样式 */
+    .row {
+      margin: 0;
       padding: 0;
-      margin-left: 350px;
-      flex-shrink: 0;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
+      width: 100%;
+      min-width: 1200px;
+    }
+
+    /* 确保滚动条始终显示 */
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+      height: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    /* 主容器样式 */
+    .container {
+      position: relative;
+      width: 1400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* 左侧个人信息 */
+    .col-12.col-lg-4 {
+      position: fixed;
+      left: calc(50% - 400px);
+      width: 300px;
+      height: 100vh;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    /* 右侧内容 */
+    .col-12.col-lg-8 {
+      position: relative;
+      margin-left: calc(50% - 50px);
+      width: 800px;
+      padding: 0 20px;
+    }
+
+    /* 确保页面容器不会被压缩 */
+    .page-wrapper {
+      min-width: 1200px;
+      overflow-x: auto;
+    }
+
+    .page-body {
+      min-width: 1200px;
+      overflow-x: visible;
+    }
+
+    /* 移除可能影响滚动的限制 */
+    .home-section {
+      min-width: 1200px;
+      overflow: visible;
+    }
+
+    /* 右侧所有内容容器统一宽度 */
+    .article-style, 
+    #news + div,
+    #publications + div,
+    #about + div,
+    #research-interests + div,
+    #hobbies + div,
+    div[style*="height: 250px; overflow-y: auto"],
+    .content-wrapper,
+    #news,
+    .col-12.col-lg-8 .content-wrapper {
+        width: 100% !important;  /* 从95%改为100%，填满右侧空间 */
+        max-width: 100% !important;
+        min-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 当屏幕宽度小于最小宽度时启用水平滚动 */
+    @media (max-width: 1200px) {
+      body {
+        overflow-x: auto;
+      }
+      
+      /* 保持固定布局不变 */
+      .container,
+      .col-12.col-lg-4,
+      .col-12.col-lg-8 {
+        position: relative;
+        min-width: initial;
+      }
+    }
+
+    /* 当屏幕小于最小宽度时添加水平滚动 */
+    @media (max-width: 1000px) {
+        body {
+            overflow-x: auto;
+        }
+    }
+
+    /* 新闻滚动窗口的特定样式 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
+        width: 95% !important;
+        min-width: 95% !important;
+        max-width: 95% !important;
+        box-sizing: border-box !important;
+        border: 2px solid #eee !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        border-radius: 5px !important;
+        background-color: #fafafa !important;
+        margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
     }
 
     /* 修改所有右侧内容的直接容器 */
@@ -98,12 +226,9 @@
 
     /* 新闻滚动窗口的样式 */
     div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
-      width: 80% !important;
-      min-width: 80% !important;
-      max-width: 80% !important;
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 !important;
+      width: 100% !important;  /* 从95%改为100% */
+      min-width: 100% !important;
+      max-width: 100% !important;
     }
 
     /* 右侧内容的实际容器 */
@@ -130,30 +255,6 @@
       max-width: 100% !important;
       margin: 0 !important;
       box-sizing: border-box !important;
-    }
-
-    /* 新闻滚动窗口的特定样式 */
-    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
-      width: 100% !important;
-      min-width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 !important;
-      padding: 10px !important;
-      border-radius: 5px !important;
-      background-color: #fafafa !important;
-      margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
-    }
-
-    /* 确保新闻区域的特定样式 */
-    #news {
-      width: 80%;
-    }
-
-    #news + div {
-      width: 80% !important;
-      margin: 0 !important;
     }
 
     /* 自定义滚动条样式 */

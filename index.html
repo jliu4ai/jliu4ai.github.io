@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en-us" >
-
+<!DOCTYPE html>
+<html lang="en-us">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,337 +19,100 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/css/jie.css"/>
+  
+  <!-- 修改后的自适应 CSS -->
   <style>
-    /* 基础样式设置 */
+    /* 重置及基础样式 */
     html, body {
       margin: 0;
       padding: 0;
-      min-width: 1200px; /* 设置最小宽度 */
       width: 100%;
-      overflow-x: auto !important; /* 强制启用水平滚动 */
     }
-
     body {
       font-family: 'Comic Neue', sans-serif;
       font-size: 15px;
       background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-      position: relative;
     }
-
-    /* 页面包装器 */
-    .page-wrapper {
-      position: relative;
-      min-width: 1200px;
-      width: 100%;
-      overflow-x: auto !important;
-    }
-
-    /* 页面主体 */
-    .page-body {
-      position: relative;
-      min-width: 1200px;
-      width: 100%;
-      overflow-x: visible;
-    }
-
-    /* 主容器样式 */
+    
+    /* 自适应容器 */
     .container {
-      position: relative;
-      width: 1400px; /* 固定宽度 */
-      min-width: 1200px;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    /* 主要区域 */
-    .home-section {
-      position: relative;
       width: 100%;
-      min-width: 1200px;
-      overflow: visible;
-    }
-
-    /* 左侧个人信息 */
-    .col-12.col-lg-4 {
-      position: fixed;
-      left: calc(50% - 400px);
-      width: 300px;
-      height: 100vh;
-      padding: 20px;
-      z-index: 100;
-    }
-
-    /* 右侧内容 */
-    .col-12.col-lg-8 {
-      position: relative;
-      margin-left: calc(50% - 50px);
-      width: 800px;
-      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
       box-sizing: border-box;
     }
-
-    /* 确保所有内容容器不会溢出 */
-    .content-wrapper {
-      width: 100%;
-      max-width: 800px;
-      box-sizing: border-box;
-    }
-
-    /* 移除所有可能影响滚动的样式 */
-    .row {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-width: 1200px;
-    }
-
-    /* 确保滚动条始终显示 */
-    ::-webkit-scrollbar {
-      -webkit-appearance: none;
-      width: 7px;
-      height: 7px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: 4px;
-      background-color: rgba(0, 0, 0, .5);
-    }
-
-    /* 主容器样式 */
-    .container {
-      position: relative;
-      width: 1400px;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    /* 左侧个人信息 */
-    .col-12.col-lg-4 {
-      position: fixed;
-      left: calc(50% - 400px);
-      width: 300px;
-      height: 100vh;
-      padding: 20px;
-      z-index: 100;
-    }
-
-    /* 右侧内容 */
+    
+    /* 利用 Bootstrap 栅格，左右两栏只在大屏时并列，移动端默认堆叠 */
+    .col-12.col-lg-4,
     .col-12.col-lg-8 {
-      position: relative;
-      margin-left: calc(50% - 50px);
-      width: 800px;
-      padding: 0 20px;
+      padding: 20px;
+      position: relative; /* 移除 fixed 定位 */
     }
-
-    /* 确保页面容器不会被压缩 */
-    .page-wrapper {
-      min-width: 1200px;
-      overflow-x: auto;
-    }
-
-    .page-body {
-      min-width: 1200px;
-      overflow-x: visible;
-    }
-
-    /* 移除可能影响滚动的限制 */
-    .home-section {
-      min-width: 1200px;
-      overflow: visible;
-    }
-
-    /* 右侧所有内容容器统一宽度 */
-    .article-style, 
+    
+    /* 内容区域及直接容器设置为自适应 */
+    .content-wrapper,
+    .article-style,
     #news + div,
     #publications + div,
     #about + div,
     #research-interests + div,
     #hobbies + div,
-    div[style*="height: 250px; overflow-y: auto"],
-    .content-wrapper,
-    #news,
     .col-12.col-lg-8 .content-wrapper {
-        width: 100% !important;  /* 从95%改为100%，填满右侧空间 */
-        max-width: 100% !important;
-        min-width: 100% !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 当屏幕宽度小于最小宽度时启用水平滚动 */
-    @media (max-width: 1200px) {
-      body {
-        overflow-x: auto;
-      }
-      
-      /* 保持固定布局不变 */
-      .container,
-      .col-12.col-lg-4,
-      .col-12.col-lg-8 {
-        position: relative;
-        min-width: initial;
-      }
-    }
-
-    /* 当屏幕小于最小宽度时添加水平滚动 */
-    @media (max-width: 1000px) {
-        body {
-            overflow-x: auto;
-        }
-    }
-
-    /* 新闻滚动窗口的特定样式 */
-    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
-        width: 95% !important;
-        min-width: 95% !important;
-        max-width: 95% !important;
-        box-sizing: border-box !important;
-        border: 2px solid #eee !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        border-radius: 5px !important;
-        background-color: #fafafa !important;
-        margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
-    }
-
-    /* 修改所有右侧内容的直接容器 */
-    .article-style, 
-    #news + div,
-    #publications + div,
-    #about + div,
-    #research-interests + div,
-    #hobbies + div {
-      width: 80%;
-      margin: 0;
+      width: 100%;
       box-sizing: border-box;
     }
-
-    /* 新闻滚动窗口的样式 */
-    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
-      width: 100% !important;  /* 从95%改为100% */
-      min-width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    /* 右侧内容的实际容器 */
-    .col-12.col-lg-8 .content-wrapper {
-      width: 80%;
-      max-width: 80%;
-      padding: 20px;
-      margin: 0;
-      box-sizing: border-box;
-      min-height: calc(100vh + 50px);  /* 确保内容高度足够以启用弹性滚动 */
-    }
-
-    /* 所有右侧内容区域统一样式 */
-    .content-wrapper .article-style,
-    .content-wrapper h3,
-    .content-wrapper div[style*="height: 250px"],
-    .content-wrapper #news,
-    .content-wrapper #news + div,
-    .content-wrapper #publications + div,
-    .content-wrapper #about + div,
-    .content-wrapper #research-interests + div,
-    .content-wrapper #hobbies + div {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-      box-sizing: border-box !important;
-    }
-
-    /* 自定义滚动条样式 */
-    .col-12.col-lg-8::-webkit-scrollbar {
-      width: 8px;
-      position: absolute;
-      right: 0;
-    }
-
-    .col-12.col-lg-8::-webkit-scrollbar-track {
-      background: rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
-
-    .col-12.col-lg-8::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.2);
-      border-radius: 4px;
-    }
-
-    .col-12.col-lg-8::-webkit-scrollbar-thumb:hover {
-      background: rgba(0,0,0,0.3);
-    }
-
-    /* 调整头像大小 */
-    .avatar {
-      width: 200px !important;  /* 原来默认是 250px */
-      height: 200px !important;
+    
+    /* 新闻滚动窗口样式（在大屏下固定高度，小屏则自动适应） */
+    .news-container {
+      height: 250px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fafafa;
+      margin-bottom: 3rem;
     }
     
-    h1 {
-      font-family: 'Comic Neue', sans-serif;
-      font-size: 26px;  /* h1 标题字体大小 */
-    }
-    h2 {
-      font-family: 'Comic Neue', sans-serif;
-      font-size: 22px;  /* h2 标题字体大小 */
-    }
-    h3 {
-      font-family: 'Comic Neue', sans-serif;
-      font-size: 20px;  /* h3 标题字体大小 */
-    }
-    .compact-paragraph {margin: 5px 0;}
-    .link:hover { color: #1565c0; } /* CSS link hover (green) */
-    /* 添加平滑滚动 */
-    html {
-      scroll-behavior: smooth;
-    }
+    /* 标题样式 */
+    h1 { font-family: 'Comic Neue', sans-serif; font-size: 26px; }
+    h2 { font-family: 'Comic Neue', sans-serif; font-size: 22px; }
+    h3 { font-family: 'Comic Neue', sans-serif; font-size: 20px; margin-top: 1rem; margin-bottom: 0.5rem; }
     
-    /* 添加渐变动画效果 */
+    /* 紧凑段落 */
+    .compact-paragraph { margin: 5px 0; }
+    
+    /* 链接悬停 */
+    .link:hover { color: #1565c0; }
+    
+    /* 平滑滚动 */
+    html { scroll-behavior: smooth; }
+    
+    /* 渐变淡入动画 */
     .fade-in {
       animation: fadeIn 1s ease-in;
     }
-    
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
-    /* 悬停效果 */
+    
+    /* 社交图标悬停放大 */
     .network-icon li a:hover {
       transform: scale(1.1);
       transition: transform 0.3s ease;
     }
     
-    /* 渐变背景 */
-    .home-section {
-      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    }
-    
-    /* 卡片式设计 */
-    .media.stream-item {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 25px;
-      transition: transform 0.3s ease;
-    }
-    
-    .media.stream-item:hover {
-      transform: translateY(-5px);
-    }
-
-    /* 现代化导航栏 */
+    /* 现代化导航栏（如有需要） */
     .navbar {
       backdrop-filter: blur(8px);
       background: rgba(255,255,255,0.8);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .nav-link {
-      position: relative;
       padding: 8px 15px;
+      position: relative;
     }
-    
     .nav-link:after {
       content: '';
       position: absolute;
@@ -360,87 +123,62 @@
       background-color: #1565c0;
       transition: width 0.3s ease;
     }
+    .nav-link:hover:after { width: 100%; }
     
-    .nav-link:hover:after {
-      width: 100%;
+    /* 卡片式设计 */
+    .media.stream-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
     }
-
-    /* 添加更强的选择器 */
-    #news div[style*="height: 250px"],
-    #about div[style*="height: 250px"],
-    .home-section div[style*="height: 250px"],
-    div[style*="height: 250px; overflow-y: auto"] {
-      width: 100% !important;     /* 从 95% 改为 100% */
-      min-width: 100% !important; /* 从 95% 改为 100% */
-      max-width: 100% !important; /* 从 95% 改为 100% */
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 auto !important;
+    .media.stream-item:hover { transform: translateY(-5px); }
+    
+    /* 调整头像大小 */
+    .avatar {
+      width: 200px;
+      height: 200px;
     }
-
-    .article-style {
-      margin-bottom: 1rem;  /* 从 2rem 减小到 1rem */
-    }
-
-    h3 {
-      font-family: 'Comic Neue', sans-serif;
-      font-size: 20px;  /* h3 标题字体大小 */
-      margin-top: 1rem;  /* 从 2rem 减小到 1rem */
-      margin-bottom: 0.5rem;  /* 从 1rem 减小到 0.5rem */
-    }
-
-    /* 移除所有可能的默认边距 */
-    .home-section {
-      padding: 0;
-      margin: 0;
-    }
-
-    .row {
-      margin: 0;
-      padding: 0;
-    }
-
-    /* 为最后一个内容元素添加底部边距 */
-    .content-wrapper > div:last-child {
-      margin-bottom: 50px !important;
+    
+    /* 移动设备响应式调整 */
+    @media (max-width: 991px) {
+      .col-12.col-lg-4, .col-12.col-lg-8 { width: 100%; padding: 20px; }
+      .container { padding: 0 10px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 18px; }
+      /* 新闻区域在小屏下自动适应高度 */
+      .news-container { height: auto; }
     }
   </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'G-0D4VNN3PB3', {});
-  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-
   
-  document.addEventListener('click', onClickCallback, false);
-</script>
+  <!-- Google Analytics、其他脚本保持不变 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function trackOutboundLink(url, target) {
+      gtag('event', 'click', {
+           'event_category': 'outbound',
+           'event_label': url,
+           'transport_type': 'beacon',
+           'event_callback': function () {
+             if (target !== '_blank') { document.location = url; }
+           }
+      });
+      console.debug("Outbound link clicked: " + url);
+    }
+    function onClickCallback(event) {
+      if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) { return; }
+      trackOutboundLink(event.target, event.target.getAttribute('target'));  
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-0D4VNN3PB3', {});
+    gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+    document.addEventListener('click', onClickCallback, false);
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jie Liu" />
   <link rel="manifest" href="/index.webmanifest" />
@@ -451,124 +189,106 @@
   <meta property="og:site_name" content="Jie Liu" />
   <meta property="og:url" content="https://jliu4ai.github.io/" />
   <meta property="og:title" content="Jie Liu" />
-  <meta property="og:description" content="PhD Student" /><meta property="og:image" content="https://jliu4ai.github.io/media/autumn.png" />
-  <meta property="twitter:image" content="https://jliu4ai.github.io/media/autumn.png" /><meta property="og:locale" content="en-us" />
-  <meta property="og:updated_time" content="2022-06-24T00:00:00&#43;00:00" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://jliu4ai.github.io/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "url": "https://jliu4ai.github.io/"
-}
-</script>
-
-
+  <meta property="og:description" content="PhD Student" />
+  <meta property="og:image" content="https://jliu4ai.github.io/media/autumn.png" />
+  <meta property="twitter:image" content="https://jliu4ai.github.io/media/autumn.png" />
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:updated_time" content="2022-06-24T00:00:00+00:00" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jliu4ai.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "https://jliu4ai.github.io/"
+    }
+  </script>
   <title>Jie Liu</title>
 </head>
 
-
 <body id="top" class="page-wrapper">
   <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
-
   <div class="page-body">
-  
     <span class="js-widget-page d-none"></span>
-
     <section id="about" class="home-section wg-about">
-      <div class="home-section-bg"></div>
       <div class="container">
         <div class="row">
+          <!-- 左侧个人信息 -->
           <div class="col-12 col-lg-4">
             <div id="profile">
-
-              
-              
               <img class="avatar avatar-circle" src="/authors/admin/Jie.jpeg" alt="Jie Liu">
-              
-
               <div class="portrait-title">
                 <h2>Jie Liu (刘杰)</h2>
                 <h3>Ph.D. Student</h3>
                 <h3>University of Amsterdam</h3>
                 <h3>
                   <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">
-                  <span>VISLAB</span>
+                    <span>VISLAB</span>
                   </a>
                 </h3>
                 <h3>
                   <a href="mailto:j.liu5@uva.nl">j.liu5@uva.nl</a>
                 </h3>
               </div>
-
               <ul class="network-icon" aria-hidden="true">
-                
                 <li>
                   <a href="/cv/Resume_JieLiu.pdf" target="_blank" rel="noopener" aria-label="cv">
                     <i class="ai ai-cv big-icon"></i>
                   </a>
                 </li>
-
                 <li>
                   <a href="https://scholar.google.com/citations?user=A03ZAtwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="google-scholar">
                     <i class="ai ai-google-scholar big-icon"></i>
                   </a>
                 </li>
-                
                 <li>
                   <a href="https://github.com/jliu4ai" target="_blank" rel="noopener" aria-label="github">
                     <i class="fab fa-github big-icon"></i>
                   </a>
                 </li>
-
                 <li>
                   <a href="https://www.linkedin.com/in/jie-liu-390664250/" target="_blank" rel="noopener" aria-label="linkedin">
                     <i class="fab fa-linkedin big-icon"></i>
                   </a>
                 </li>
-
                 <li>
                   <a href="https://twitter.com/jliu4ai" target="_blank" rel="noopener" aria-label="twitter">
                     <i class="fab fa-twitter big-icon"></i>
                   </a>
                 </li>
-                
               </ul>
-
             </div>
           </div>
+          <!-- 右侧内容 -->
           <div class="col-12 col-lg-8">
             <div class="content-wrapper">
               <h3>About Me</h3>
               <div class="article-style">
-                <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a>  Ph.D. candidate at <a href="VISLAB https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
-                  Unversity of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
+                <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a> Ph.D. candidate at <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
+                  University of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
                   <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
-                  I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>. </p>
+                  I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>.
+                </p>
               </div>
-
               <h3>Research Interests</h3>
               <div class="article-style">
-                <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics: </p>
+                <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics:</p>
                 <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
                 <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
-                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application<p>
+                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application</p>
               </div>
-
               <h3>Hobbies</h3>
               <div class="article-style">
                 <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
                   Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
                 </p>
               </div>
-
               <h3 id="news">News</h3>
-              <div style="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;">
+              <!-- 使用自定义 class 替换内联样式 -->
+              <div class="news-container">
                 <ul>
                   <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
                   <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
@@ -578,10 +298,9 @@
                   <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
                   <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
                   <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
-                  <li><b>[Sept 2021]</b> I joined in VISLAB as a Phd candidate.</li>
+                  <li><b>[Sept 2021]</b> I joined VISLAB as a PhD candidate.</li>
                 </ul>
               </div>
-
               <h3 id="projects">Recent Projects</h3>
               <div class="article-style">
                 <ul>
@@ -609,83 +328,71 @@
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div><!-- end right column -->
+        </div><!-- end row -->
+      </div><!-- end container -->
     </section>
-
-  </div>
-
-  <div class="page-footer">
-    
-  </div>
-
+  </div><!-- end page-body -->
+  <div class="page-footer"></div>
   
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
+  <!-- 后续模态窗口、脚本等保持不变 -->
+  <div id="modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cite</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <pre><code class="tex hljs"></code></pre>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+            <i class="fas fa-copy"></i> Copy
+          </a>
+          <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <div id="modal-error"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
         </div>
-      </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-<!--    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>-->
-
-<!--<div class="container">-->
-<!--   <div style="display:inline-block;width:200px;">-->
-<!--    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=5d4snb3frum&amp;s=220&amp;m=0&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>-->
-<!--    &lt;!&ndash; <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5iqmqp24bei&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script> &ndash;&gt;-->
-<!--  </div>-->
-<!--</div>-->
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
-<script type="text/javascript">$(function(){$('[data-toggle="tooltip"]').tooltip()});</script> <script defer src="/assets/js/common.js"></script>
-<script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-
+      </div>
+    </div>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+  <script defer src="/assets/js/common.js"></script>
+  <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 </body>
 </html>
-
-
