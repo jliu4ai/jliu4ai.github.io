@@ -23,7 +23,7 @@
     body {
       font-family: 'Comic Neue', sans-serif;
       font-size: 15px;
-      overflow: hidden;
+      overflow: auto;
       position: fixed;
       width: 100%;
       height: 100%;
@@ -35,7 +35,7 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      overflow: auto;
       margin: 0;
     }
 
@@ -43,7 +43,7 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      overflow: auto;
       padding: 0;
       margin: 0;
       top: 0;
@@ -51,9 +51,9 @@
 
     .container {
       position: fixed;
-      left: 250px;        /* 从左侧边界固定250px距离，这个值你可以调整 */
+      left: 175px;        /* 从左侧边界固定250px距离，这个值你可以调整 */
       transform: none;     /* 移除之前的居中变换 */
-      width: 2300px;
+      width: 2200px;
       height: 100vh;
       display: flex;
       padding: 0;
@@ -62,7 +62,7 @@
 
     /* 左侧个人信息固定 */
     .col-12.col-lg-4 {
-      width: 400px;
+      width: 350px;
       height: 100vh;
       padding: 20px;
       flex-shrink: 0;
@@ -70,12 +70,14 @@
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      width: 1650px;  /* 直接设置固定宽度 */
+      width: 1730px;  /* 直接设置固定宽度 */
       height: 100vh;
       overflow-y: auto;
       padding: 0;
       margin: 0;
       flex-shrink: 0;  /* 防止flex布局压缩 */
+      -webkit-overflow-scrolling: touch;  /* 在 iOS 上启用平滑滚动 */
+      overscroll-behavior: contain;       /* 控制滚动边界行为 */
     }
 
     /* 修改所有右侧内容的直接容器 */
@@ -103,9 +105,41 @@
     /* 右侧内容的实际容器 */
     .col-12.col-lg-8 .content-wrapper {
       width: 80%;
+      max-width: 80%;
       padding: 20px;
       margin: 0;
       box-sizing: border-box;
+      min-height: calc(100vh + 50px);  /* 确保内容高度足够以启用弹性滚动 */
+    }
+
+    /* 所有右侧内容区域统一样式 */
+    .content-wrapper .article-style,
+    .content-wrapper h3,
+    .content-wrapper div[style*="height: 250px"],
+    .content-wrapper #news,
+    .content-wrapper #news + div,
+    .content-wrapper #publications + div,
+    .content-wrapper #about + div,
+    .content-wrapper #research-interests + div,
+    .content-wrapper #hobbies + div {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 新闻滚动窗口的特定样式 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;
+      margin: 0 !important;
+      padding: 10px !important;
+      border-radius: 5px !important;
+      background-color: #fafafa !important;
+      margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
     }
 
     /* 确保新闻区域的特定样式 */
@@ -259,6 +293,11 @@
     .row {
       margin: 0;
       padding: 0;
+    }
+
+    /* 为最后一个内容元素添加底部边距 */
+    .content-wrapper > div:last-child {
+      margin-bottom: 50px !important;
     }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
@@ -440,7 +479,6 @@
 
               <h3 id="projects">Recent Projects</h3>
               <div class="article-style">
-                <h4>2024</h4>
                 <ul>
                   <li>
                     <b>CaPo: Causal Prompting for Embodied Agents</b><br>
@@ -453,6 +491,13 @@
                     <b>CPlot: Interactive Segmentation with Contrastive Plot Learning</b><br>
                     <i>European Conference on Computer Vision (ECCV), 2024</i><br>
                     <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    [<a href="#" target="_blank">Paper</a>]
+                    [<a href="#" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Domain Adaptation for Medical Image Segmentation</b><br>
+                    <i>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</i><br>
+                    Wenzhe Yin, <b>Jie Liu</b>, Efstratios Gavves<br>
                     [<a href="#" target="_blank">Paper</a>]
                     [<a href="#" target="_blank">Code</a>]
                   </li>
