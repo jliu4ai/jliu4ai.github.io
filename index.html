@@ -32,7 +32,7 @@
     }
 
     .page-body {
-      position: fixed;
+      position: relative;
       width: 100%;
       height: 100%;
       overflow: auto;
@@ -40,19 +40,18 @@
     }
 
     .home-section {
-      position: fixed;
+      position: relative;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: visible;
       padding: 0;
       margin: 0;
       top: 0;
     }
 
     .container {
-      position: fixed;
-      left: 175px;        /* 从左侧边界固定250px距离，这个值你可以调整 */
-      transform: none;     /* 移除之前的居中变换 */
+      position: relative;
+      left: 175px;
       width: 2200px;
       height: 100vh;
       display: flex;
@@ -70,14 +69,14 @@
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      width: 1730px;  /* 直接设置固定宽度 */
-      height: 100vh;
-      overflow-y: auto;
+      width: 1730px;
+      height: auto;
+      overflow-y: visible;
       padding: 0;
       margin: 0;
-      flex-shrink: 0;  /* 防止flex布局压缩 */
-      -webkit-overflow-scrolling: touch;  /* 在 iOS 上启用平滑滚动 */
-      overscroll-behavior: contain;       /* 控制滚动边界行为 */
+      flex-shrink: 0;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     /* 修改所有右侧内容的直接容器 */
