@@ -41,58 +41,86 @@
       flex-wrap: wrap;
     }
 
-    /* 左侧个人信息 */
+    /* 左侧个人信息 - 固定宽度 */
     .col-12.col-lg-4 {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      max-width: 350px;
-      height: 100vh;
-      padding: 20px 20px 20px 40px;
-      flex: 0 0 auto;
-      margin-left: 3%;
-    }
-
-    /* 右侧内容 */
-    .col-12.col-lg-8 {
-      position: relative;
-      width: 100%;
-      flex: 1;
-      min-width: 0;
-      padding: 0 20px;
-      margin-left: 0;
-    }
-
-    /* 响应式布局 */
-    @media (max-width: 991px) {
-      .container {
-        padding: 0 20px;
-      }
-
-      .col-12.col-lg-4 {
-        margin-left: 0;
+        position: fixed;  /* 改为fixed定位而不是sticky */
+        left: 5%;  /* 距离左边的距离 */
+        width: 350px;  /* 固定宽度 */
+        height: 100vh;
         padding: 20px;
-      }
-
-      .col-12.col-lg-8 {
-        margin-left: 0;
-        padding: 0;
-      }
+        z-index: 100;
     }
 
-    /* 内容区域宽度调整 */
-    .content-wrapper {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+    /* 右侧内容 - 增加宽度 */
+    .col-12.col-lg-8 {
+        position: relative;
+        margin-left: 400px;  /* 为左侧固定内容留出空间 */
+        width: calc(95% - 400px);  /* 计算剩余空间 */
+        padding: 0 20px;
     }
 
-    /* 新闻滚动窗口调整 */
-    div[style*="height: 250px; overflow-y: auto"] {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box;
+    /* 右侧所有内容容器统一宽度 */
+    .article-style, 
+    #news + div,
+    #publications + div,
+    #about + div,
+    #research-interests + div,
+    #hobbies + div,
+    div[style*="height: 250px; overflow-y: auto"],
+    .content-wrapper,
+    #news,
+    .col-12.col-lg-8 .content-wrapper {
+        width: 95% !important;
+        max-width: 95% !important;
+        min-width: 95% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 响应式布局调整 */
+    @media (max-width: 991px) {
+        .col-12.col-lg-4 {
+            position: relative;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .col-12.col-lg-8 {
+            margin-left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .article-style, 
+        #news + div,
+        #publications + div,
+        #about + div,
+        #research-interests + div,
+        #hobbies + div,
+        div[style*="height: 250px; overflow-y: auto"],
+        .content-wrapper,
+        #news,
+        .col-12.col-lg-8 .content-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    /* 新闻滚动窗口的特定样式 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
+        width: 95% !important;
+        min-width: 95% !important;
+        max-width: 95% !important;
+        box-sizing: border-box !important;
+        border: 2px solid #eee !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        border-radius: 5px !important;
+        background-color: #fafafa !important;
+        margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
     }
 
     .page-body {
@@ -159,30 +187,6 @@
       max-width: 100% !important;
       margin: 0 !important;
       box-sizing: border-box !important;
-    }
-
-    /* 新闻滚动窗口的特定样式 */
-    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;"] {
-      width: 100% !important;
-      min-width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 !important;
-      padding: 10px !important;
-      border-radius: 5px !important;
-      background-color: #fafafa !important;
-      margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
-    }
-
-    /* 确保新闻区域的特定样式 */
-    #news {
-      width: 80%;
-    }
-
-    #news + div {
-      width: 80% !important;
-      margin: 0 !important;
     }
 
     /* 自定义滚动条样式 */
