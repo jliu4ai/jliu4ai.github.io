@@ -34,15 +34,15 @@
     .page-body {
       position: relative;
       width: 100%;
-      height: 100%;
-      overflow: auto;
+      height: auto;
+      overflow: visible;
       margin: 0;
     }
 
     .home-section {
       position: relative;
       width: 100%;
-      height: 100%;
+      height: auto;
       overflow: visible;
       padding: 0;
       margin: 0;
@@ -53,27 +53,32 @@
       position: relative;
       left: 175px;
       width: 2200px;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       padding: 0;
       margin: 0;
+      overflow-x: hidden;
     }
 
     /* 左侧个人信息固定 */
     .col-12.col-lg-4 {
+      position: fixed;
       width: 350px;
       height: 100vh;
       padding: 20px;
       flex-shrink: 0;
+      top: 0;
+      left: 175px;
     }
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
+      position: relative;
       width: 1730px;
       height: auto;
       overflow-y: visible;
       padding: 0;
-      margin: 0;
+      margin-left: 350px;
       flex-shrink: 0;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
