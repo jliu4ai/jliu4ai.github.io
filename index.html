@@ -36,7 +36,7 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 5%;
       display: flex;
       flex-wrap: wrap;
     }
@@ -48,8 +48,9 @@
       width: 100%;
       max-width: 350px;
       height: 100vh;
-      padding: 20px;
+      padding: 20px 20px 20px 40px;
       flex: 0 0 auto;
+      margin-left: 3%;
     }
 
     /* 右侧内容 */
@@ -65,14 +66,12 @@
     /* 响应式布局 */
     @media (max-width: 991px) {
       .container {
-        flex-direction: column;
+        padding: 0 20px;
       }
 
       .col-12.col-lg-4 {
-        position: relative;
-        height: auto;
-        max-width: 100%;
-        margin-bottom: 30px;
+        margin-left: 0;
+        padding: 20px;
       }
 
       .col-12.col-lg-8 {
