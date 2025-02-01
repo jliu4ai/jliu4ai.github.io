@@ -20,16 +20,99 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/css/jie.css"/>
   <style>
+    /* 基础样式设置 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 1200px; /* 设置最小宽度 */
+      width: 100%;
+      overflow-x: auto !important; /* 强制启用水平滚动 */
+    }
+
     body {
       font-family: 'Comic Neue', sans-serif;
       font-size: 15px;
-      overflow-x: scroll;
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      position: relative;
+    }
+
+    /* 页面包装器 */
+    .page-wrapper {
+      position: relative;
+      min-width: 1200px;
+      width: 100%;
+      overflow-x: auto !important;
+    }
+
+    /* 页面主体 */
+    .page-body {
+      position: relative;
+      min-width: 1200px;
+      width: 100%;
+      overflow-x: visible;
+    }
+
+    /* 主容器样式 */
+    .container {
+      position: relative;
+      width: 1400px; /* 固定宽度 */
+      min-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* 主要区域 */
+    .home-section {
       position: relative;
       width: 100%;
-      height: 100%;
-      margin: 0;
-      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
       min-width: 1200px;
+      overflow: visible;
+    }
+
+    /* 左侧个人信息 */
+    .col-12.col-lg-4 {
+      position: fixed;
+      left: calc(50% - 400px);
+      width: 300px;
+      height: 100vh;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    /* 右侧内容 */
+    .col-12.col-lg-8 {
+      position: relative;
+      margin-left: calc(50% - 50px);
+      width: 800px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* 确保所有内容容器不会溢出 */
+    .content-wrapper {
+      width: 100%;
+      max-width: 800px;
+      box-sizing: border-box;
+    }
+
+    /* 移除所有可能影响滚动的样式 */
+    .row {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-width: 1200px;
+    }
+
+    /* 确保滚动条始终显示 */
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+      height: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, .5);
     }
 
     /* 主容器样式 */
