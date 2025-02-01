@@ -41,21 +41,21 @@
       flex-wrap: wrap;
     }
 
-    /* 左侧个人信息 - 调整左边距 */
+    /* 左侧个人信息 - 向右移动 */
     .col-12.col-lg-4 {
         position: fixed;
-        left: 15%;  /* 从5%增加到15% */
+        left: calc(15% + 150px);  /* 增加150px的右移 */
         width: 300px;
         height: 100vh;
         padding: 20px;
         z-index: 100;
     }
 
-    /* 右侧内容 - 相应调整位置 */
+    /* 右侧内容 - 相应调整 */
     .col-12.col-lg-8 {
         position: relative;
-        margin-left: calc(15% + 300px);  /* 调整为与左侧对应 */
-        width: calc(85% - 300px);  /* 调整计算值以匹配新的布局 */
+        margin-left: calc(15% + 300px);  /* 对应左侧的新位置 */
+        width: calc(85% - 300px);  /* 保持宽度计算 */
         padding: 0 20px;
     }
 
