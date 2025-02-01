@@ -45,17 +45,17 @@
     .col-12.col-lg-4 {
         position: fixed;  /* 改为fixed定位而不是sticky */
         left: 5%;  /* 距离左边的距离 */
-        width: 350px;  /* 固定宽度 */
+        width: 300px;  /* 固定宽度 */
         height: 100vh;
         padding: 20px;
         z-index: 100;
     }
 
-    /* 右侧内容 - 增加宽度 */
+    /* 右侧内容 - 减少与左侧的间距 */
     .col-12.col-lg-8 {
         position: relative;
-        margin-left: 400px;  /* 为左侧固定内容留出空间 */
-        width: calc(95% - 400px);  /* 计算剩余空间 */
+        margin-left: 320px;  /* 从350px减少到320px，紧跟左侧内容 */
+        width: calc(95% - 320px);  /* 相应调整计算值 */
         padding: 0 20px;
     }
 
@@ -70,9 +70,9 @@
     .content-wrapper,
     #news,
     .col-12.col-lg-8 .content-wrapper {
-        width: 95% !important;
-        max-width: 95% !important;
-        min-width: 95% !important;
+        width: 100% !important;  /* 从95%改为100%，填满右侧空间 */
+        max-width: 100% !important;
+        min-width: 100% !important;
         margin: 0 !important;
         box-sizing: border-box !important;
     }
@@ -155,12 +155,9 @@
 
     /* 新闻滚动窗口的样式 */
     div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
-      width: 80% !important;
-      min-width: 80% !important;
-      max-width: 80% !important;
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 !important;
+      width: 100% !important;  /* 从95%改为100% */
+      min-width: 100% !important;
+      max-width: 100% !important;
     }
 
     /* 右侧内容的实际容器 */
