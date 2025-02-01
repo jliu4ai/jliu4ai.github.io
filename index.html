@@ -144,11 +144,14 @@
       text-align: center;
     }
 
-    /* 新增：大屏下将左侧部分固定，其它布局保持不变 */
+    /* 大屏下将左侧部分固定，其他布局保持不变 */
     @media (min-width: 992px) {
       .col-12.col-lg-4 {
         position: sticky;
         top: 0;
+        /* 以下属性可确保粘性定位在 flex 布局中生效 */
+        align-self: flex-start;
+        z-index: 10;
       }
     }
   </style>
@@ -181,16 +184,16 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jie Liu" />
   <link rel="manifest" href="/index.webmanifest" />
-  <link rel="icon" type="image/jpg" href="/media/snowboarding.jpg" />
-  <link rel="apple-touch-icon" type="image/jpg" href="/media/snowboarding.jpg" />
+  <link rel="icon" type="image/png" href="/media/autumn.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/autumn.png" />
   <link rel="canonical" href="https://jliu4ai.github.io/" />
   <meta property="twitter:card" content="summary" />
   <meta property="og:site_name" content="Jie Liu" />
   <meta property="og:url" content="https://jliu4ai.github.io/" />
   <meta property="og:title" content="Jie Liu" />
   <meta property="og:description" content="PhD Student" />
-  <meta property="og:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
-  <meta property="twitter:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
+  <meta property="og:image" content="https://jliu4ai.github.io/media/autumn.png" />
+  <meta property="twitter:image" content="https://jliu4ai.github.io/media/autumn.png" />
   <meta property="og:locale" content="en-us" />
   <meta property="og:updated_time" content="2022-06-24T00:00:00+00:00" />
   <script type="application/ld+json">
