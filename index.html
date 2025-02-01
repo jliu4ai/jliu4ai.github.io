@@ -76,6 +76,8 @@
       padding: 0;
       margin: 0;
       flex-shrink: 0;  /* 防止flex布局压缩 */
+      -webkit-overflow-scrolling: touch;  /* 在 iOS 上启用平滑滚动 */
+      overscroll-behavior: contain;       /* 控制滚动边界行为 */
     }
 
     /* 修改所有右侧内容的直接容器 */
@@ -107,6 +109,7 @@
       padding: 20px;
       margin: 0;
       box-sizing: border-box;
+      min-height: calc(100vh + 50px);  /* 确保内容高度足够以启用弹性滚动 */
     }
 
     /* 所有右侧内容区域统一样式 */
