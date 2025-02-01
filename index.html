@@ -19,8 +19,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/css/jie.css"/>
-  
-  <!-- 修改后的自适应 CSS -->
+
+  <!-- 自适应样式 -->
   <style>
     /* 重置及基础样式 */
     html, body {
@@ -33,7 +33,6 @@
       font-size: 15px;
       background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
-    
     /* 自适应容器 */
     .container {
       width: 100%;
@@ -42,15 +41,13 @@
       padding: 0 15px;
       box-sizing: border-box;
     }
-    
-    /* 利用 Bootstrap 栅格，左右两栏只在大屏时并列，移动端默认堆叠 */
+    /* 左右两栏：在大屏时左右并列，移动端堆叠 */
     .col-12.col-lg-4,
     .col-12.col-lg-8 {
       padding: 20px;
-      position: relative; /* 移除 fixed 定位 */
+      position: relative;
     }
-    
-    /* 内容区域及直接容器设置为自适应 */
+    /* 内容区域自适应 */
     .content-wrapper,
     .article-style,
     #news + div,
@@ -62,8 +59,7 @@
       width: 100%;
       box-sizing: border-box;
     }
-    
-    /* 新闻滚动窗口样式（在大屏下固定高度，小屏则自动适应） */
+    /* 新闻滚动窗口样式 */
     .news-container {
       height: 250px;
       overflow-y: auto;
@@ -73,21 +69,16 @@
       background-color: #fafafa;
       margin-bottom: 3rem;
     }
-    
     /* 标题样式 */
     h1 { font-family: 'Comic Neue', sans-serif; font-size: 26px; }
     h2 { font-family: 'Comic Neue', sans-serif; font-size: 22px; }
     h3 { font-family: 'Comic Neue', sans-serif; font-size: 20px; margin-top: 1rem; margin-bottom: 0.5rem; }
-    
     /* 紧凑段落 */
     .compact-paragraph { margin: 5px 0; }
-    
     /* 链接悬停 */
     .link:hover { color: #1565c0; }
-    
     /* 平滑滚动 */
     html { scroll-behavior: smooth; }
-    
     /* 渐变淡入动画 */
     .fade-in {
       animation: fadeIn 1s ease-in;
@@ -96,14 +87,12 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
     /* 社交图标悬停放大 */
     .network-icon li a:hover {
       transform: scale(1.1);
       transition: transform 0.3s ease;
     }
-    
-    /* 现代化导航栏（如有需要） */
+    /* 导航栏样式 */
     .navbar {
       backdrop-filter: blur(8px);
       background: rgba(255,255,255,0.8);
@@ -124,7 +113,6 @@
       transition: width 0.3s ease;
     }
     .nav-link:hover:after { width: 100%; }
-    
     /* 卡片式设计 */
     .media.stream-item {
       background: white;
@@ -135,13 +123,11 @@
       transition: transform 0.3s ease;
     }
     .media.stream-item:hover { transform: translateY(-5px); }
-    
     /* 调整头像大小 */
     .avatar {
       width: 200px;
       height: 200px;
     }
-    
     /* 移动设备响应式调整 */
     @media (max-width: 991px) {
       .col-12.col-lg-4, .col-12.col-lg-8 { width: 100%; padding: 20px; }
@@ -149,30 +135,35 @@
       h1 { font-size: 22px; }
       h2 { font-size: 20px; }
       h3 { font-size: 18px; }
-      /* 新闻区域在小屏下自动适应高度 */
       .news-container { height: auto; }
+    }
+    /* 访客地图容器样式 */
+    .visitor-map-container {
+      width: 50%;
+      margin: 20px auto;
+      text-align: center;
     }
   </style>
   
-  <!-- 其他脚本和 Meta 信息保持不变 -->
+  <!-- 保持其他脚本及 Meta 信息不变 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     function trackOutboundLink(url, target) {
       gtag('event', 'click', {
-           'event_category': 'outbound',
-           'event_label': url,
-           'transport_type': 'beacon',
-           'event_callback': function () {
-             if (target !== '_blank') { document.location = url; }
-           }
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+          if (target !== '_blank') { document.location = url; }
+        }
       });
       console.debug("Outbound link clicked: " + url);
     }
     function onClickCallback(event) {
       if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) { return; }
-      trackOutboundLink(event.target, event.target.getAttribute('target'));  
+      trackOutboundLink(event.target, event.target.getAttribute('target'));
     }
     gtag('js', new Date());
     gtag('config', 'G-0D4VNN3PB3', {});
@@ -287,7 +278,6 @@
                 </p>
               </div>
               <h3 id="news">News</h3>
-              <!-- 使用自定义 class 替换内联样式 -->
               <div class="news-container">
                 <ul>
                   <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
@@ -327,18 +317,19 @@
                   </li>
                 </ul>
               </div>
-            </div>
-          </div><!-- end right column -->
+              <!-- 在右侧内容的最后添加访客地图容器 -->
+              <div class="visitor-map-container">
+                <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
+              </div>
+            </div><!-- end content-wrapper -->
+          </div><!-- end right-side col -->
         </div><!-- end row -->
       </div><!-- end container -->
     </section>
   </div><!-- end page-body -->
   <div class="page-footer"></div>
   
-  <!-- 在页面底部插入 ClustrMaps 访客地图的 JavaScript 代码 -->
-  <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
-  
-  <!-- 其他现有脚本 -->
+  <!-- 以下为其他引用脚本 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
