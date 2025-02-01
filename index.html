@@ -70,14 +70,19 @@
 
     /* 右侧内容可滚动 */
     .col-12.col-lg-8 {
-      width: 1730px;  /* 直接设置固定宽度 */
+      width: 1675px;
       height: 100vh;
-      overflow-y: auto;
+      overflow-y: scroll;
       padding: 0;
       margin: 0;
-      flex-shrink: 0;  /* 防止flex布局压缩 */
-      -webkit-overflow-scrolling: touch;  /* 在 iOS 上启用平滑滚动 */
-      overscroll-behavior: contain;       /* 控制滚动边界行为 */
+      flex-shrink: 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .content-wrapper {
+      min-height: calc(100vh + 50px);
+      position: relative;
+      overflow: visible;
     }
 
     /* 修改所有右侧内容的直接容器 */
@@ -139,7 +144,6 @@
       padding: 10px !important;
       border-radius: 5px !important;
       background-color: #fafafa !important;
-      margin-bottom: 3rem !important;  /* 增加更大的底部边距 */
     }
 
     /* 确保新闻区域的特定样式 */
