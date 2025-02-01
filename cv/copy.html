@@ -140,8 +140,19 @@
     /* 访客地图容器样式，增加了更大的上边距 */
     .visitor-map-container {
       width: 50%;
-      margin: 50px auto 20px auto; /* 上边距50px，其余保持 */
+      margin: 50px auto 20px auto;
       text-align: center;
+    }
+
+    /* 大屏下将左侧部分固定，其他布局保持不变 */
+    @media (min-width: 992px) {
+      .col-12.col-lg-4 {
+        position: sticky;
+        top: 0;
+        /* 以下属性可确保粘性定位在 flex 布局中生效 */
+        align-self: flex-start;
+        z-index: 10;
+      }
     }
   </style>
   
@@ -349,4 +360,6 @@
     </div>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+</body>
+</html>

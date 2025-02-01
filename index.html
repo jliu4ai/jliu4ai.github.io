@@ -33,7 +33,7 @@
       font-size: 15px;
       background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
-    /* 自适应容器 */
+    /* 自适应容器：容器最大宽度 1200px，居中显示 */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -41,7 +41,7 @@
       padding: 0 15px;
       box-sizing: border-box;
     }
-    /* 左右两栏：在大屏时左右并列，移动端堆叠 */
+    /* 左右两栏：原布局保持 */
     .col-12.col-lg-4,
     .col-12.col-lg-8 {
       padding: 20px;
@@ -144,16 +144,45 @@
       text-align: center;
     }
 
-    /* 大屏下将左侧部分固定，其他布局保持不变 */
-    @media (min-width: 992px) {
+    /* —— 以下为大屏下固定左侧部分的修改 —— */
+    /* 当视口宽度在 992px～1199.98px 时，
+       由于容器为全宽（仅受内边距 15px 限制），
+       将左侧部分固定在距视口左侧 15px 处，并以百分比计算宽度 */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
-        position: sticky;
+        position: fixed;
         top: 0;
-        /* 以下属性可确保粘性定位在 flex 布局中生效 */
-        align-self: flex-start;
+        left: 15px;
+        /* 原 col-lg-4 占比约 33.33% */
+        width: 33.33%;
+        height: 100vh;
+        overflow-y: auto;
         z-index: 10;
       }
+      .col-12.col-lg-8 {
+        margin-left: calc(15px + 33.33%);
+      }
     }
+    /* 当视口宽度 ≥ 1200px 时，
+       居中容器宽度固定为 1200px，容器左侧边缘的位置为 calc(50% - 600px)；
+       由于容器有左右 15px 内边距，左侧部分相对于视口左侧的偏移为：
+         calc(50% - 600px + 15px)
+       同时，col-lg-4 的宽度固定为 400px（约占 1200px 的 33.33%） */
+    @media (min-width: 1200px) {
+      .col-12.col-lg-4 {
+        position: fixed;
+        top: 0;
+        left: calc(50% - 600px + 15px);
+        width: 400px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 10;
+      }
+      .col-12.col-lg-8 {
+        margin-left: calc(50% - 600px + 15px + 400px);
+      }
+    }
+    /* —— 固定左侧部分结束 —— */
   </style>
   
   <!-- 保持其他脚本及 Meta 信息不变 -->
