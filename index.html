@@ -144,34 +144,11 @@
       text-align: center;
     }
 
-    /* 新增样式：大屏下左侧固定，右侧独立滚动 */
+    /* 新增：大屏下将左侧部分固定，其它布局保持不变 */
     @media (min-width: 992px) {
-      /* 为避免 container 居中影响固定布局，将 container 全宽 */
-      .container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      .row {
-        margin: 0;
-      }
-      .sidebar {
-        position: fixed;
+      .col-12.col-lg-4 {
+        position: sticky;
         top: 0;
-        left: 0;
-        width: 400px; /* 固定宽度，可根据需要调整 */
-        height: 100vh;
-        overflow-y: auto;
-        background-color: #fafafa;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-      .main-content {
-        margin-left: 400px;
-        height: 100vh;
-        overflow-y: auto;
-        padding: 20px;
-        box-sizing: border-box;
       }
     }
   </style>
@@ -204,16 +181,16 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jie Liu" />
   <link rel="manifest" href="/index.webmanifest" />
-  <link rel="icon" type="image/png" href="/media/autumn.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/autumn.png" />
+  <link rel="icon" type="image/jpg" href="/media/snowboarding.jpg" />
+  <link rel="apple-touch-icon" type="image/jpg" href="/media/snowboarding.jpg" />
   <link rel="canonical" href="https://jliu4ai.github.io/" />
   <meta property="twitter:card" content="summary" />
   <meta property="og:site_name" content="Jie Liu" />
   <meta property="og:url" content="https://jliu4ai.github.io/" />
   <meta property="og:title" content="Jie Liu" />
   <meta property="og:description" content="PhD Student" />
-  <meta property="og:image" content="https://jliu4ai.github.io/media/autumn.png" />
-  <meta property="twitter:image" content="https://jliu4ai.github.io/media/autumn.png" />
+  <meta property="og:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
+  <meta property="twitter:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
   <meta property="og:locale" content="en-us" />
   <meta property="og:updated_time" content="2022-06-24T00:00:00+00:00" />
   <script type="application/ld+json">
@@ -238,8 +215,8 @@
     <section id="about" class="home-section wg-about">
       <div class="container">
         <div class="row">
-          <!-- 左侧个人信息（固定侧栏） -->
-          <div class="col-12 col-lg-4 sidebar">
+          <!-- 左侧个人信息 -->
+          <div class="col-12 col-lg-4">
             <div id="profile">
               <img class="avatar avatar-circle" src="/authors/admin/Jie.jpeg" alt="Jie Liu">
               <div class="portrait-title">
@@ -284,8 +261,8 @@
               </ul>
             </div>
           </div>
-          <!-- 右侧内容（独立滚动） -->
-          <div class="col-12 col-lg-8 main-content">
+          <!-- 右侧内容 -->
+          <div class="col-12 col-lg-8">
             <div class="content-wrapper">
               <h3>About Me</h3>
               <div class="article-style">
