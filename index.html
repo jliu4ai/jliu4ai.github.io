@@ -63,6 +63,33 @@
     .media.stream-item:hover {
       transform: translateY(-5px);
     }
+
+    /* 现代化导航栏 */
+    .navbar {
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      position: relative;
+      padding: 8px 15px;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #1565c0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
 <script>
