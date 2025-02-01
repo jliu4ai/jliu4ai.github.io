@@ -22,9 +22,123 @@
   <style>
     body {
       font-family: 'Comic Neue', sans-serif;
-      font-size: 15px;  /* 减小基础字体大小一号 */
+      font-size: 15px;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
-    
+
+    .page-body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .home-section {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      top: 0;
+    }
+
+    .container {
+      position: fixed;
+      left: 250px;        /* 从左侧边界固定250px距离，这个值你可以调整 */
+      transform: none;     /* 移除之前的居中变换 */
+      width: 2300px;
+      height: 100vh;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* 左侧个人信息固定 */
+    .col-12.col-lg-4 {
+      width: 400px;
+      height: 100vh;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    /* 右侧内容可滚动 */
+    .col-12.col-lg-8 {
+      width: 1650px;  /* 直接设置固定宽度 */
+      height: 100vh;
+      overflow-y: auto;
+      padding: 0;
+      margin: 0;
+      flex-shrink: 0;  /* 防止flex布局压缩 */
+    }
+
+    /* 修改所有右侧内容的直接容器 */
+    .article-style, 
+    #news + div,
+    #publications + div,
+    #about + div,
+    #research-interests + div,
+    #hobbies + div {
+      width: 80%;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 新闻滚动窗口的样式 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
+      width: 80% !important;
+      min-width: 80% !important;
+      max-width: 80% !important;
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;
+      margin: 0 !important;
+    }
+
+    /* 右侧内容的实际容器 */
+    .col-12.col-lg-8 .content-wrapper {
+      width: 80%;
+      padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 确保新闻区域的特定样式 */
+    #news {
+      width: 80%;
+    }
+
+    #news + div {
+      width: 80% !important;
+      margin: 0 !important;
+    }
+
+    /* 自定义滚动条样式 */
+    .col-12.col-lg-8::-webkit-scrollbar {
+      width: 8px;
+      position: absolute;
+      right: 0;
+    }
+
+    .col-12.col-lg-8::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+
+    .col-12.col-lg-8::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+
+    .col-12.col-lg-8::-webkit-scrollbar-thumb:hover {
+      background: rgba(0,0,0,0.3);
+    }
+
     /* 调整头像大小 */
     .avatar {
       width: 200px !important;  /* 原来默认是 250px */
@@ -111,6 +225,41 @@
     .nav-link:hover:after {
       width: 100%;
     }
+
+    /* 添加更强的选择器 */
+    #news div[style*="height: 250px"],
+    #about div[style*="height: 250px"],
+    .home-section div[style*="height: 250px"],
+    div[style*="height: 250px; overflow-y: auto"] {
+      width: 100% !important;     /* 从 95% 改为 100% */
+      min-width: 100% !important; /* 从 95% 改为 100% */
+      max-width: 100% !important; /* 从 95% 改为 100% */
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;
+      margin: 0 auto !important;
+    }
+
+    .article-style {
+      margin-bottom: 1rem;  /* 从 2rem 减小到 1rem */
+    }
+
+    h3 {
+      font-family: 'Comic Neue', sans-serif;
+      font-size: 20px;  /* h3 标题字体大小 */
+      margin-top: 1rem;  /* 从 2rem 减小到 1rem */
+      margin-bottom: 0.5rem;  /* 从 1rem 减小到 0.5rem */
+    }
+
+    /* 移除所有可能的默认边距 */
+    .home-section {
+      padding: 0;
+      margin: 0;
+    }
+
+    .row {
+      margin: 0;
+      padding: 0;
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
 <script>
@@ -180,7 +329,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper">
+<body id="top" class="page-wrapper">
   <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
 
   <div class="page-body">
@@ -244,56 +393,71 @@
                     <i class="fab fa-twitter big-icon"></i>
                   </a>
                 </li>
-
-<!--        <li>-->
-<!--          <a href="mailto:j.shen@uva.nl"  aria-label="envelope">-->
-<!--            <i class="fas fa-envelope big-icon"></i>-->
-<!--          </a>-->
-<!--        </li>-->
                 
               </ul>
 
             </div>
           </div>
           <div class="col-12 col-lg-8">
+            <div class="content-wrapper">
+              <h3>About Me</h3>
+              <div class="article-style">
+                <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a>  Ph.D. candidate at <a href="VISLAB https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
+                  Unversity of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
+                  <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
+                  I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>. </p>
+              </div>
 
-            <h3>About Me</h3>
+              <h3>Research Interests</h3>
+              <div class="article-style">
+                <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics: </p>
+                <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
+                <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
+                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application<p>
+              </div>
 
-            <div class="article-style">
-              <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a>  Ph.D. candidate at <a href="VISLAB https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
-                Unversity of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
-                <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
-                I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>. </p>
-            
-            <h3>Research Interests</h3>
-            <div class="article-style">
-              <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics: </p>
-              <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
-              <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
-              <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application<p>
-            
-            <h3>Hobbies</h3>
-            <div class="article-style">
-              <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
-                Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
-              </p>
-            </div>
-    <h3 id="news">News</h3>
-    <div style="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;">
-      <ul>
-        <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
-        <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
-        <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot </a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
-        <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
-        <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
-        <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
-        <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
-        <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Dynamic Prototype Convolution was accepted to CVPR 2022.</li>
-        <li><b>[Sept 2021]</b> I joined in VISLAB as a Phd candidate.</li>
-      </ul>
-    </div>
-            </div>
-            <div class="row">
+              <h3>Hobbies</h3>
+              <div class="article-style">
+                <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
+                  Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
+                </p>
+              </div>
+
+              <h3 id="news">News</h3>
+              <div style="height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px; border-radius: 5px; background-color: #fafafa;">
+                <ul>
+                  <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
+                  <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
+                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot </a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
+                  <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
+                  <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
+                  <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
+                  <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
+                  <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
+                  <li><b>[Sept 2021]</b> I joined in VISLAB as a Phd candidate.</li>
+                </ul>
+              </div>
+
+              <h3 id="projects">Recent Projects</h3>
+              <div class="article-style">
+                <h4>2024</h4>
+                <ul>
+                  <li>
+                    <b>CaPo: Causal Prompting for Embodied Agents</b><br>
+                    <i>International Conference on Learning Representations (ICLR), 2024</i><br>
+                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>CPlot: Interactive Segmentation with Contrastive Plot Learning</b><br>
+                    <i>European Conference on Computer Vision (ECCV), 2024</i><br>
+                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    [<a href="#" target="_blank">Paper</a>]
+                    [<a href="#" target="_blank">Code</a>]
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
