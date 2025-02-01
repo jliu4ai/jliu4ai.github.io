@@ -85,31 +85,36 @@
     #about + div,
     #research-interests + div,
     #hobbies + div {
-      width: 80%;  /* 统一所有section的宽度 */
-    }
-
-    /* 确保所有文本内容区域的宽度一致 */
-    .article-style {
       width: 80%;
       margin: 0;
       box-sizing: border-box;
     }
 
-    /* 右侧内容的实际容器 */
-    .col-12.col-lg-8 .content-wrapper {
-      width: 95%;
-      padding: 20px;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    /* 调整 news 滑动窗口的样式 */
+    /* 新闻滚动窗口的样式 */
     div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
       width: 80% !important;
       min-width: 80% !important;
       max-width: 80% !important;
       box-sizing: border-box !important;
       border: 2px solid #eee !important;
+      margin: 0 !important;
+    }
+
+    /* 右侧内容的实际容器 */
+    .col-12.col-lg-8 .content-wrapper {
+      width: 80%;
+      padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 确保新闻区域的特定样式 */
+    #news {
+      width: 80%;
+    }
+
+    #news + div {
+      width: 80% !important;
       margin: 0 !important;
     }
 
