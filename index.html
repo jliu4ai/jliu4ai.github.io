@@ -36,27 +36,26 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 5%;
       display: flex;
-      min-width: 1000px; /* 设置最小宽度防止布局破坏 */
+      min-width: 1000px;
     }
 
-    /* 左侧个人信息 - 使用固定宽度和位置 */
+    /* 左侧个人信息 */
     .col-12.col-lg-4 {
       position: fixed;
-      left: 50%;
-      transform: translateX(-600px); /* 向左偏移以保持居中对齐 */
+      left: calc(15% + 150px); /* 调整左侧位置 */
       width: 300px;
       height: 100vh;
       padding: 20px;
       z-index: 100;
     }
 
-    /* 右侧内容 - 相对定位并保持固定距离 */
+    /* 右侧内容 */
     .col-12.col-lg-8 {
       position: relative;
-      margin-left: calc(50% - 250px); /* 从容器中心点开始计算位置 */
-      width: 800px;
+      margin-left: calc(15% + 300px); /* 与左侧保持固定距离 */
+      width: calc(85% - 300px); /* 动态计算宽度 */
       padding: 0 20px;
     }
 
@@ -80,20 +79,19 @@
 
     /* 响应式布局调整 */
     @media (max-width: 1200px) {
-      .container {
-        min-width: 1000px; /* 保持最小宽度 */
-        overflow-x: auto; /* 当屏幕小于最小宽度时允许水平滚动 */
-      }
-      
-      /* 保持左右两栏的相对位置不变 */
       .col-12.col-lg-4 {
-        position: fixed;
-        transform: none;
-        left: 50px; /* 固定左边距 */
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 20px;
       }
       
       .col-12.col-lg-8 {
-        margin-left: 400px; /* 固定与左侧的距离 */
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
       }
     }
 
