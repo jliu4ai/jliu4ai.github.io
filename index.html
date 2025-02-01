@@ -182,6 +182,17 @@
     .nav-link:hover:after {
       width: 100%;
     }
+
+    /* 调整 news 滑动窗口的样式 */
+    div[style*="height: 250px"] {
+      height: 250px !important;  /* 保持原来的高度 */
+      width: 95% !important;     /* 增加宽度 */
+      overflow-y: auto;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
 <script>
