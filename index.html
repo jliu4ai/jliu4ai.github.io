@@ -81,8 +81,36 @@
     /* 修改所有右侧内容的直接容器 */
     .article-style, 
     #news + div,
-    #publications + div {
+    #publications + div,
+    #about + div,
+    #research-interests + div,
+    #hobbies + div {
       width: 80%;  /* 统一所有section的宽度 */
+    }
+
+    /* 确保所有文本内容区域的宽度一致 */
+    .article-style {
+      width: 80%;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 右侧内容的实际容器 */
+    .col-12.col-lg-8 .content-wrapper {
+      width: 80%;
+      padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 调整 news 滑动窗口的样式 */
+    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      border: 2px solid #eee !important;
+      margin: 0 auto !important;
     }
 
     /* 自定义滚动条样式 */
@@ -191,24 +219,6 @@
     
     .nav-link:hover:after {
       width: 100%;
-    }
-
-    /* 调整 news 滑动窗口的样式 */
-    div[style*="height: 250px; overflow-y: auto; border: 1px solid #eee"] {
-      width: 100% !important;     /* 确保与其他section一致 */
-      min-width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      border: 2px solid #eee !important;
-      margin: 0 auto !important;
-    }
-
-    /* 右侧内容的实际容器 */
-    .col-12.col-lg-8 .content-wrapper {
-      width: 80%;  /* 确保内容包装器宽度一致 */
-      padding: 20px;
-      margin: 0;
-      box-sizing: border-box;
     }
 
     /* 添加更强的选择器 */
