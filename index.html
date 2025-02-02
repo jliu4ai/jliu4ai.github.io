@@ -185,9 +185,9 @@
     /* —— 固定左侧部分结束 —— */
 
     /* 新增：publication 列表项间距 */
-    .publication-list li {
-      margin-bottom: 20px;
-    }
+    .publication-list {
+    list-style: none;
+     padding-left: 0;}
   </style>
   
   <!-- 保持其他脚本及 Meta 信息不变 -->
@@ -347,8 +347,8 @@
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
                   <li>
-                    <!-- 用 flex 容器将小图和文本放在一行显示 -->
-                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                    <!-- 用 flex 容器将小图和文本放在一行显示，且垂直居中对齐 -->
+                    <div style="display: flex; gap: 10px; align-items: center;">
                       <img src="publication_jie/cplot.png" alt="CPlot" style="max-width: 100px;">
                       <div>
                         <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
