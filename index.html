@@ -41,13 +41,13 @@
       padding: 0 15px;
       box-sizing: border-box;
     }
-    /* 左右两栏：原布局保持 */
+    /* 左右两栏 */
     .col-12.col-lg-4,
     .col-12.col-lg-8 {
       padding: 20px;
       position: relative;
     }
-    /* 内容区域自适应 */
+    /* 内容区域 */
     .content-wrapper,
     .article-style,
     #news + div,
@@ -59,7 +59,7 @@
       width: 100%;
       box-sizing: border-box;
     }
-    /* 新闻滚动窗口样式 */
+    /* 新闻滚动窗口 */
     .news-container {
       height: 250px;
       overflow-y: auto;
@@ -79,7 +79,7 @@
     .link:hover { color: #1565c0; }
     /* 平滑滚动 */
     html { scroll-behavior: smooth; }
-    /* 渐变淡入动画 */
+    /* 渐变动画 */
     .fade-in {
       animation: fadeIn 1s ease-in;
     }
@@ -87,12 +87,12 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    /* 社交图标悬停放大 */
+    /* 社交图标 */
     .network-icon li a:hover {
       transform: scale(1.1);
       transition: transform 0.3s ease;
     }
-    /* 导航栏样式 */
+    /* 导航栏 */
     .navbar {
       backdrop-filter: blur(8px);
       background: rgba(255,255,255,0.8);
@@ -113,7 +113,7 @@
       transition: width 0.3s ease;
     }
     .nav-link:hover:after { width: 100%; }
-    /* 卡片式设计 */
+    /* 卡片式 */
     .media.stream-item {
       background: white;
       border-radius: 8px;
@@ -123,12 +123,12 @@
       transition: transform 0.3s ease;
     }
     .media.stream-item:hover { transform: translateY(-5px); }
-    /* 调整头像大小 */
+    /* 头像大小 */
     .avatar {
       width: 200px;
       height: 200px;
     }
-    /* 移动设备响应式调整 */
+    /* 移动设备 */
     @media (max-width: 991px) {
       .col-12.col-lg-4, .col-12.col-lg-8 { width: 100%; padding: 20px; }
       .container { padding: 0 10px; }
@@ -137,13 +137,13 @@
       h3 { font-size: 18px; }
       .news-container { height: auto; }
     }
-    /* 访客地图容器样式 */
+    /* 访客地图 */
     .visitor-map-container {
       width: 50%;
       margin: 50px auto 20px auto;
       text-align: center;
     }
-    /* —— 大屏下固定左侧部分 —— */
+    /* 大屏固定左侧 */
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
         position: fixed;
@@ -329,11 +329,11 @@
                     [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
-                  <!-- CPlot 项目，使用 Flex 布局：左右对齐、垂直居中且保证内容靠左 -->
+                  <!-- CPlot 项目：Flex 布局左右靠左且垂直居中 -->
                   <li style="margin: 0; padding: 0;">
-                    <div style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 10px;">
+                    <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start; margin-bottom: 10px;">
                       <img src="publication_jie/cplot.png" alt="CPlot" style="width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
-                      <div style="text-align: left;">
+                      <div style="flex: 1; text-align: left;">
                         <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
                         <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                         <b>European Conference on Computer Vision (ECCV), 2024</b><br>
