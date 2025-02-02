@@ -144,12 +144,13 @@
     /* —— 大屏下固定左侧部分 —— */
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
-        position: fixed;
+        position: fixed !important;
         top: 0;
         left: 15px;
         width: 33.33%;
         height: 100vh;
-        /* 删除 overflow-y: auto，使左侧完全固定 */
+        /* 去除内部滚动 */
+        overflow: visible !important;
         z-index: 10;
       }
       .col-12.col-lg-8 {
@@ -158,12 +159,13 @@
     }
     @media (min-width: 1200px) {
       .col-12.col-lg-4 {
-        position: fixed;
+        position: fixed !important;
         top: 0;
         left: calc(50% - 600px + 15px);
         width: 400px;
         height: 100vh;
-        /* 删除 overflow-y: auto，使左侧完全固定 */
+        /* 去除内部滚动 */
+        overflow: visible !important;
         z-index: 10;
       }
       .col-12.col-lg-8 {
