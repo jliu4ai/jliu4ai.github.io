@@ -33,7 +33,7 @@
       font-size: 15px;
       background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
-    /* 自适应容器 */
+    /* 自适应容器：容器最大宽度 1200px，居中显示 */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -41,7 +41,7 @@
       padding: 0 15px;
       box-sizing: border-box;
     }
-    /* 左右两栏：在大屏时左右并列，移动端堆叠 */
+    /* 左右两栏：原布局保持 */
     .col-12.col-lg-4,
     .col-12.col-lg-8 {
       padding: 20px;
@@ -144,16 +144,45 @@
       text-align: center;
     }
 
-    /* 大屏下将左侧部分固定，其他布局保持不变 */
-    @media (min-width: 992px) {
+    /* —— 以下为大屏下固定左侧部分的修改 —— */
+    /* 当视口宽度在 992px～1199.98px 时，
+       由于容器为全宽（仅受内边距 15px 限制），
+       将左侧部分固定在距视口左侧 15px 处，并以百分比计算宽度 */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
-        position: sticky;
+        position: fixed;
         top: 0;
-        /* 以下属性可确保粘性定位在 flex 布局中生效 */
-        align-self: flex-start;
+        left: 15px;
+        /* 原 col-lg-4 占比约 33.33% */
+        width: 33.33%;
+        height: 100vh;
+        overflow-y: auto;
         z-index: 10;
       }
+      .col-12.col-lg-8 {
+        margin-left: calc(15px + 33.33%);
+      }
     }
+    /* 当视口宽度 ≥ 1200px 时，
+       居中容器宽度固定为 1200px，容器左侧边缘的位置为 calc(50% - 600px)；
+       由于容器有左右 15px 内边距，左侧部分相对于视口左侧的偏移为：
+         calc(50% - 600px + 15px)
+       同时，col-lg-4 的宽度固定为 400px（约占 1200px 的 33.33%） */
+    @media (min-width: 1200px) {
+      .col-12.col-lg-4 {
+        position: fixed;
+        top: 0;
+        left: calc(50% - 600px + 15px);
+        width: 400px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 10;
+      }
+      .col-12.col-lg-8 {
+        margin-left: calc(50% - 600px + 15px + 400px);
+      }
+    }
+    /* —— 固定左侧部分结束 —— */
   </style>
   
   <!-- 保持其他脚本及 Meta 信息不变 -->
@@ -184,16 +213,16 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jie Liu" />
   <link rel="manifest" href="/index.webmanifest" />
-  <link rel="icon" type="image/png" href="/media/autumn.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/autumn.png" />
+  <link rel="icon" type="image/jpg" href="/media/snowboarding.jpg" />
+  <link rel="apple-touch-icon" type="image/jpg" href="/media/snowboarding.jpg" />
   <link rel="canonical" href="https://jliu4ai.github.io/" />
   <meta property="twitter:card" content="summary" />
   <meta property="og:site_name" content="Jie Liu" />
   <meta property="og:url" content="https://jliu4ai.github.io/" />
   <meta property="og:title" content="Jie Liu" />
   <meta property="og:description" content="PhD Student" />
-  <meta property="og:image" content="https://jliu4ai.github.io/media/autumn.png" />
-  <meta property="twitter:image" content="https://jliu4ai.github.io/media/autumn.png" />
+  <meta property="og:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
+  <meta property="twitter:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
   <meta property="og:locale" content="en-us" />
   <meta property="og:updated_time" content="2022-06-24T00:00:00+00:00" />
   <script type="application/ld+json">
@@ -277,7 +306,7 @@
               </div>
               <h3>Research Interests</h3>
               <div class="article-style">
-                <p>My research aims to develop human-centered machines that augment human capabilities in perception, reasoning, and interaction with the world. To achieve this, I am focusing on the following topics:</p>
+                <p>My research aims to develop human-centered machines that augment human capabilities in <b>perception</b>, <b>reasoning</b>, and <b>interaction</b> with the world. To achieve this, I am focusing on the following topics:</p>
                 <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
                 <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
                 <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application</p>
@@ -306,25 +335,75 @@
               <div class="article-style">
                 <ul>
                   <li>
-                    <b>CaPo: Causal Prompting for Embodied Agents</b><br>
-                    <i>International Conference on Learning Representations (ICLR), 2024</i><br>
-                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
+                    <b>CaPo: Cooperative Plan Optimization for EfficientEmbodied Multi-agent Cooperation</b><br>
+                    <b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>International Conference on Learning Representations (ICLR), 2025</b><br>
                     [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
                   <li>
-                    <b>CPlot: Interactive Segmentation with Contrastive Plot Learning</b><br>
-                    <i>European Conference on Computer Vision (ECCV), 2024</i><br>
-                    <b>Jie Liu</b>, Pan Zhou, Efstratios Gavves<br>
-                    [<a href="#" target="_blank">Paper</a>]
-                    [<a href="#" target="_blank">Code</a>]
+                    <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
+                    <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>European Conference on Computer Vision (ECCV), 2024</b><br>
+                    [<a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/cplot" target="_blank">Code</a>]
                   </li>
                   <li>
-                    <b>Domain Adaptation for Medical Image Segmentation</b><br>
-                    <i>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</i><br>
-                    Wenzhe Yin, <b>Jie Liu</b>, Efstratios Gavves<br>
-                    [<a href="#" target="_blank">Paper</a>]
-                    [<a href="#" target="_blank">Code</a>]
+                    <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
+                    <b>Jie Liu</b>, Wenzhe Yin,  Haochen Wang, Yunlu Chen,Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>International Conference on 3D Vision (3DV), 2024</b><br>
+                    [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b><br>
+                    <b>Jie Liu</b>, Yanqi Bao,Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>British Machine Vision Conference (BMVC), 2022</b><br>
+                    [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b><br>
+                    <b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves<br>
+                    <b> Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b><br>
+                    [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Domain Adaptation with Cauchy-Schwarz Divergence</b><br>
+                    Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</b><br>
+                    [<a href="https://arxiv.org/pdf/2405.19978" target="_blank">Paper</a>]
+                    [<a href="https://github.com/ywzcode/CS-adv" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>PiClick: Picking the Desired Mask in Click-based Interactive Segmentation</b><br>
+                    Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves<br>
+                    <b>IEEE Transactions on Multimedia (TMM), 2023</b><br>
+                    [<a href="https://arxiv.org/pdf/2304.11609" target="_blank">Paper</a>]
+                    [<a href="https://github.com/cilinyan/PiClick" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Dynamic Transformer for Few-shot Instance Segmentation</b><br>
+                    Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Proceedings of the 30th ACM International Conference on Multimedia (ACM MM), 2022</b><br>
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+
+                  <li>
+                    <b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b><br>
+                    Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao <br>
+                    <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b><br>
+                    [<a href=https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Few-shot Semantic Segmentation with Cyclic Memory Network</b><br>
+                    Guo-Sen Xie, Huan Xiong, <b>Jie Liu</b>, Yazhou Yao, Ling Shao<br>
+                    <b>International Conference on Computer Vision (ICCV), 2021</b><br>
+                    [<a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Xie_Few-Shot_Semantic_Segmentation_With_Cyclic_Memory_Network_ICCV_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
                   </li>
                 </ul>
               </div>

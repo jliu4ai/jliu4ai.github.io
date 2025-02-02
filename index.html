@@ -183,6 +183,11 @@
       }
     }
     /* —— 固定左侧部分结束 —— */
+
+    /* 新增：publication 列表项间距 */
+    .publication-list li {
+      margin-bottom: 20px;
+    }
   </style>
   
   <!-- 保持其他脚本及 Meta 信息不变 -->
@@ -333,7 +338,7 @@
               </div>
               <h3 id="projects">Recent Projects</h3>
               <div class="article-style">
-                <ul>
+                <ul class="publication-list">
                   <li>
                     <b>CaPo: Cooperative Plan Optimization for EfficientEmbodied Multi-agent Cooperation</b><br>
                     <b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves<br>
@@ -342,6 +347,8 @@
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
                   <li>
+                    <!-- 在 CPlot publication 前添加介绍图片 -->
+                    <img src="publication_jie/cplot.png" alt="CPlot" style="max-width: 100px; display: block; margin-bottom: 10px;">
                     <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
                     <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>European Conference on Computer Vision (ECCV), 2024</b><br>
@@ -350,14 +357,14 @@
                   </li>
                   <li>
                     <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
-                    <b>Jie Liu</b>, Wenzhe Yin,  Haochen Wang, Yunlu Chen,Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>International Conference on 3D Vision (3DV), 2024</b><br>
                     [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
                   </li>
                   <li>
                     <b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b><br>
-                    <b>Jie Liu</b>, Yanqi Bao,Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>British Machine Vision Conference (BMVC), 2022</b><br>
                     [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
@@ -390,12 +397,11 @@
                     [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
                   </li>
-
                   <li>
                     <b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b><br>
                     Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao <br>
                     <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b><br>
-                    [<a href=https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
                   </li>
                   <li>
