@@ -448,3 +448,440 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  <meta name="author" content="Jie Liu" />
+  <meta name="description" content="PhD Student" />
+  <link rel="alternate" hreflang="en-us" href="https://autumn9999.github.io/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#1565c0" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/jie.css"/>
+
+  <!-- 自适应样式 -->
+  <style>
+    /* 重置及基础样式 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    body {
+      font-family: 'Comic Neue', sans-serif;
+      font-size: 15px;
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+    /* 自适应容器：容器最大宽度 1200px，居中显示 */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    /* 左右两栏：原布局保持 */
+    .col-12.col-lg-4,
+    .col-12.col-lg-8 {
+      padding: 20px;
+      position: relative;
+    }
+    /* 内容区域自适应 */
+    .content-wrapper,
+    .article-style,
+    #news + div,
+    #publications + div,
+    #about + div,
+    #research-interests + div,
+    #hobbies + div,
+    .col-12.col-lg-8 .content-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    /* 新闻滚动窗口样式 */
+    .news-container {
+      height: 250px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fafafa;
+      margin-bottom: 3rem;
+    }
+    /* 标题样式 */
+    h1 { font-family: 'Comic Neue', sans-serif; font-size: 26px; }
+    h2 { font-family: 'Comic Neue', sans-serif; font-size: 22px; }
+    h3 { font-family: 'Comic Neue', sans-serif; font-size: 20px; margin-top: 1rem; margin-bottom: 0.5rem; }
+    /* 紧凑段落 */
+    .compact-paragraph { margin: 5px 0; }
+    /* 链接悬停 */
+    .link:hover { color: #1565c0; }
+    /* 平滑滚动 */
+    html { scroll-behavior: smooth; }
+    /* 渐变淡入动画 */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* 社交图标悬停放大 */
+    .network-icon li a:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+    /* 导航栏样式 */
+    .navbar {
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      padding: 8px 15px;
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #1565c0;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover:after { width: 100%; }
+    /* 卡片式设计 */
+    .media.stream-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+    .media.stream-item:hover { transform: translateY(-5px); }
+    /* 调整头像大小 */
+    .avatar {
+      width: 200px;
+      height: 200px;
+    }
+    /* 移动设备响应式调整 */
+    @media (max-width: 991px) {
+      .col-12.col-lg-4, .col-12.col-lg-8 { width: 100%; padding: 20px; }
+      .container { padding: 0 10px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 18px; }
+      .news-container { height: auto; }
+    }
+    /* 访客地图容器样式 */
+    .visitor-map-container {
+      width: 50%;
+      margin: 50px auto 20px auto;
+      text-align: center;
+    }
+    /* —— 大屏下固定左侧部分 —— */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .col-12.col-lg-4 {
+        position: fixed;
+        top: 0;
+        left: 15px;
+        width: 33.33%;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 10;
+      }
+      .col-12.col-lg-8 {
+        margin-left: calc(15px + 33.33%);
+      }
+    }
+    @media (min-width: 1200px) {
+      .col-12.col-lg-4 {
+        position: fixed;
+        top: 0;
+        left: calc(50% - 600px + 15px);
+        width: 400px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 10;
+      }
+      .col-12.col-lg-8 {
+        margin-left: calc(50% - 600px + 15px + 400px);
+      }
+    }
+  </style>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function trackOutboundLink(url, target) {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+          if (target !== '_blank') { document.location = url; }
+        }
+      });
+      console.debug("Outbound link clicked: " + url);
+    }
+    function onClickCallback(event) {
+      if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) { return; }
+      trackOutboundLink(event.target, event.target.getAttribute('target'));
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-0D4VNN3PB3', {});
+    gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+    document.addEventListener('click', onClickCallback, false);
+  </script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jie Liu" />
+  <link rel="manifest" href="/index.webmanifest" />
+  <link rel="icon" type="image/jpg" href="/media/snowboarding.jpg" />
+  <link rel="apple-touch-icon" type="image/jpg" href="/media/snowboarding.jpg" />
+  <link rel="canonical" href="https://jliu4ai.github.io/" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="og:site_name" content="Jie Liu" />
+  <meta property="og:url" content="https://jliu4ai.github.io/" />
+  <meta property="og:title" content="Jie Liu" />
+  <meta property="og:description" content="PhD Student" />
+  <meta property="og:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
+  <meta property="twitter:image" content="https://jliu4ai.github.io/media/snowboarding.jpg" />
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:updated_time" content="2022-06-24T00:00:00+00:00" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jliu4ai.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "https://jliu4ai.github.io/"
+    }
+  </script>
+  <title>Jie Liu</title>
+</head>
+
+<body id="top" class="page-wrapper">
+  <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
+  <div class="page-body">
+    <span class="js-widget-page d-none"></span>
+    <section id="about" class="home-section wg-about">
+      <div class="container">
+        <div class="row">
+          <!-- 左侧个人信息 -->
+          <div class="col-12 col-lg-4">
+            <div id="profile">
+              <img class="avatar avatar-circle" src="/authors/admin/Jie.jpeg" alt="Jie Liu">
+              <div class="portrait-title">
+                <h2>Jie Liu (刘杰)</h2>
+                <h3>Ph.D. Student</h3>
+                <h3>University of Amsterdam</h3>
+                <h3>
+                  <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">
+                    <span>VISLAB</span>
+                  </a>
+                </h3>
+                <h3>
+                  <a href="mailto:j.liu5@uva.nl">j.liu5@uva.nl</a>
+                </h3>
+              </div>
+              <ul class="network-icon" aria-hidden="true">
+                <li>
+                  <a href="/cv/Resume_JieLiu.pdf" target="_blank" rel="noopener" aria-label="cv">
+                    <i class="ai ai-cv big-icon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://scholar.google.com/citations?user=A03ZAtwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="google-scholar">
+                    <i class="ai ai-google-scholar big-icon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/jliu4ai" target="_blank" rel="noopener" aria-label="github">
+                    <i class="fab fa-github big-icon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/jie-liu-390664250/" target="_blank" rel="noopener" aria-label="linkedin">
+                    <i class="fab fa-linkedin big-icon"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/jliu4ai" target="_blank" rel="noopener" aria-label="twitter">
+                    <i class="fab fa-twitter big-icon"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 右侧内容 -->
+          <div class="col-12 col-lg-8">
+            <div class="content-wrapper">
+              <h3>About Me</h3>
+              <div class="article-style">
+                <p>I am a fourth-year <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a> Ph.D. candidate at <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>, 
+                  University of Amsterdam (UvA), the Netherlands. I am fortunate to be supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and 
+                  <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
+                  I also work closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>.
+                </p>
+              </div>
+              <h3>Research Interests</h3>
+              <div class="article-style">
+                <p>My research aims to develop human-centered machines that augment human capabilities in <b>perception</b>, <b>reasoning</b>, and <b>interaction</b> with the world. To achieve this, I am focusing on the following topics:</p>
+                <p class="compact-paragraph">&#8226;  <b>Human-AI Interaction</b>: interactive segmentation, LLM-based multi-agent cooperation</p>
+                <p class="compact-paragraph">&#8226;  <b>Efficient Learning</b>: few-shot segmentation, prompt learning, probabilistic modeling </p>
+                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: multi-modal learning, vision-language models, healthcare application</p>
+              </div>
+              <h3>Hobbies</h3>
+              <div class="article-style">
+                <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
+                  Whether on the slopes, the court, or in training, I love pushing my limits and refining my skills.
+                </p>
+              </div>
+              <h3 id="news">News</h3>
+              <div class="news-container">
+                <ul>
+                  <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
+                  <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
+                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot</a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
+                  <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
+                  <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
+                  <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
+                  <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
+                  <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
+                  <li><b>[Sept 2021]</b> I joined VISLAB as a PhD candidate.</li>
+                </ul>
+              </div>
+              <h3 id="projects">Recent Projects</h3>
+              <div class="article-style">
+                <ul style="list-style: none; padding-left: 0;">
+                  <li>
+                    <b>CaPo: Cooperative Plan Optimization for EfficientEmbodied Multi-agent Cooperation</b><br>
+                    <b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>International Conference on Learning Representations (ICLR), 2025</b><br>
+                    [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
+                  </li>
+                  <!-- CPlot 项目，使用浮动布局 -->
+                  <li style="margin: 0; padding: 0; text-align: left;">
+                    <div style="margin-bottom: 10px; overflow: auto;">
+                      <img src="publication_jie/cplot.png" alt="CPlot" style="width: 150px; height: auto; margin-right: 10px; float: left;">
+                      <div style="overflow: hidden;">
+                        <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
+                        <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                        <b>European Conference on Computer Vision (ECCV), 2024</b><br>
+                        [<a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank">Paper</a>]
+                        [<a href="https://github.com/jliu4ai/cplot" target="_blank">Code</a>]
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
+                    <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>International Conference on 3D Vision (3DV), 2024</b><br>
+                    [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b><br>
+                    <b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>British Machine Vision Conference (BMVC), 2022</b><br>
+                    [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b><br>
+                    <b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves<br>
+                    <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b><br>
+                    [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Domain Adaptation with Cauchy-Schwarz Divergence</b><br>
+                    Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</b><br>
+                    [<a href="https://arxiv.org/pdf/2405.19978" target="_blank">Paper</a>]
+                    [<a href="https://github.com/ywzcode/CS-adv" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>PiClick: Picking the Desired Mask in Click-based Interactive Segmentation</b><br>
+                    Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves<br>
+                    <b>IEEE Transactions on Multimedia (TMM), 2023</b><br>
+                    [<a href="https://arxiv.org/pdf/2304.11609" target="_blank">Paper</a>]
+                    [<a href="https://github.com/cilinyan/PiClick" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Dynamic Transformer for Few-shot Instance Segmentation</b><br>
+                    Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Proceedings of the 30th ACM International Conference on Multimedia (ACM MM), 2022</b><br>
+                    [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b><br>
+                    Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao<br>
+                    <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b><br>
+                    [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                  <li>
+                    <b>Few-shot Semantic Segmentation with Cyclic Memory Network</b><br>
+                    Guo-Sen Xie, Huan Xiong, <b>Jie Liu</b>, Yazhou Yao, Ling Shao<br>
+                    <b>International Conference on Computer Vision (ICCV), 2021</b><br>
+                    [<a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Xie_Few-Shot_Semantic_Segmentation_With_Cyclic_Memory_Network_ICCV_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                  </li>
+                </ul>
+              </div>
+              <!-- 访客地图 -->
+              <div class="visitor-map-container">
+                <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
+              </div>
+            </div><!-- end content-wrapper -->
+          </div><!-- end right-side col -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+    </section>
+  </div><!-- end page-body -->
+  <div class="page-footer"></div>
+  
+  <!-- 其他引用脚本 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+</body>
+</html>
