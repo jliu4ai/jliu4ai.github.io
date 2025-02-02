@@ -137,14 +137,13 @@
       h3 { font-size: 18px; }
       .news-container { height: auto; }
     }
-    /* 访客地图容器样式，增加了更大的上边距 */
+    /* 访客地图容器样式 */
     .visitor-map-container {
       width: 50%;
       margin: 50px auto 20px auto;
       text-align: center;
     }
-
-    /* —— 以下为大屏下固定左侧部分的修改 —— */
+    /* —— 大屏下固定左侧部分 —— */
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
         position: fixed;
@@ -311,7 +310,7 @@
                 <ul>
                   <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
                   <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
-                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot </a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
+                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot</a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
                   <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
                   <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
                   <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
@@ -330,11 +329,11 @@
                     [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
-                  <!-- 修改后的 CPlot 项目，强制左右对齐 -->
+                  <!-- CPlot 项目，使用浮动布局 -->
                   <li style="margin: 0; padding: 0; text-align: left;">
-                    <div style="display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 10px;">
-                      <img src="publication_jie/cplot.png" alt="CPlot" style="width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
-                      <div style="text-align: left;">
+                    <div style="margin-bottom: 10px; overflow: auto;">
+                      <img src="publication_jie/cplot.png" alt="CPlot" style="width: 150px; height: auto; margin-right: 10px; float: left;">
+                      <div style="overflow: hidden;">
                         <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
                         <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                         <b>European Conference on Computer Vision (ECCV), 2024</b><br>
@@ -342,17 +341,17 @@
                         [<a href="https://github.com/jliu4ai/cplot" target="_blank">Code</a>]
                       </div>
                     </div>
-                  </li>                  
+                  </li>
                   <li>
                     <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
-                    <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen,Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>International Conference on 3D Vision (3DV), 2024</b><br>
                     [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
                   </li>
                   <li>
                     <b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b><br>
-                    <b>Jie Liu</b>, Yanqi Bao,Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>British Machine Vision Conference (BMVC), 2022</b><br>
                     [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
@@ -360,7 +359,7 @@
                   <li>
                     <b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b><br>
                     <b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves<br>
-                    <b> Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b><br>
+                    <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b><br>
                     [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
                   </li>
@@ -387,9 +386,9 @@
                   </li>
                   <li>
                     <b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b><br>
-                    Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao <br>
+                    Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao<br>
                     <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b><br>
-                    [<a href=https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
+                    [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
                   </li>
                   <li>
@@ -401,7 +400,7 @@
                   </li>
                 </ul>
               </div>
-              <!-- 访客地图容器 -->
+              <!-- 访客地图 -->
               <div class="visitor-map-container">
                 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
               </div>
@@ -413,7 +412,7 @@
   </div><!-- end page-body -->
   <div class="page-footer"></div>
   
-  <!-- 以下为其他引用脚本 -->
+  <!-- 其他引用脚本 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
