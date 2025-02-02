@@ -145,15 +145,11 @@
     }
 
     /* —— 以下为大屏下固定左侧部分的修改 —— */
-    /* 当视口宽度在 992px～1199.98px 时，
-       由于容器为全宽（仅受内边距 15px 限制），
-       将左侧部分固定在距视口左侧 15px 处，并以百分比计算宽度 */
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .col-12.col-lg-4 {
         position: fixed;
         top: 0;
         left: 15px;
-        /* 原 col-lg-4 占比约 33.33% */
         width: 33.33%;
         height: 100vh;
         overflow-y: auto;
@@ -163,11 +159,6 @@
         margin-left: calc(15px + 33.33%);
       }
     }
-    /* 当视口宽度 ≥ 1200px 时，
-       居中容器宽度固定为 1200px，容器左侧边缘的位置为 calc(50% - 600px)；
-       由于容器有左右 15px 内边距，左侧部分相对于视口左侧的偏移为：
-         calc(50% - 600px + 15px)
-       同时，col-lg-4 的宽度固定为 400px（约占 1200px 的 33.33%） */
     @media (min-width: 1200px) {
       .col-12.col-lg-4 {
         position: fixed;
@@ -182,10 +173,8 @@
         margin-left: calc(50% - 600px + 15px + 400px);
       }
     }
-    /* —— 固定左侧部分结束 —— */
   </style>
   
-  <!-- 保持其他脚本及 Meta 信息不变 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -341,10 +330,11 @@
                     [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
                   </li>
-                  <li style="margin: 0; padding: 0;">
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 10px;">
+                  <!-- 修改后的 CPlot 项目，强制左右对齐 -->
+                  <li style="margin: 0; padding: 0; text-align: left;">
+                    <div style="display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 10px;">
                       <img src="publication_jie/cplot.png" alt="CPlot" style="width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
-                      <div>
+                      <div style="text-align: left;">
                         <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
                         <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
                         <b>European Conference on Computer Vision (ECCV), 2024</b><br>
@@ -355,7 +345,7 @@
                   </li>                  
                   <li>
                     <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
-                    <b>Jie Liu</b>, Wenzhe Yin,  Haochen Wang, Yunlu Chen,Jan-Jakob Sonke, Efstratios Gavves<br>
+                    <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen,Jan-Jakob Sonke, Efstratios Gavves<br>
                     <b>International Conference on 3D Vision (3DV), 2024</b><br>
                     [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
                     [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
@@ -411,7 +401,7 @@
                   </li>
                 </ul>
               </div>
-              <!-- 访客地图容器，距离上方内容距离加大 -->
+              <!-- 访客地图容器 -->
               <div class="visitor-map-container">
                 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
               </div>
