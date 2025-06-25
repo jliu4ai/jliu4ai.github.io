@@ -172,10 +172,12 @@
         margin-left: calc(50% - 600px + 15px + 400px);
       }
     }
-    /* 缩小项目之间的距离（强制覆盖） */
-    body .page-body .content-wrapper ul.publication-list li {
+    /* 缩小项目之间的距离，强制覆盖全局样式 */
+    body .page-body .content-wrapper ul.publication-list > li {
       margin-bottom: 8px !important;
-      padding-bottom: 0 !important;
+    }
+    body .page-body .content-wrapper ul.publication-list > li:last-child {
+      margin-bottom: 0 !important;
     }
   </style>
   
