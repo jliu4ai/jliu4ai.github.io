@@ -172,9 +172,14 @@
         margin-left: calc(50% - 600px + 15px + 400px);
       }
     }
-    /* 缩小项目之间的距离，强制覆盖全局样式 */
+    /* 让项目列表极其紧凑，移除所有内部元素的间距 */
+    body .page-body .content-wrapper ul.publication-list > li,
+    body .page-body .content-wrapper ul.publication-list > li * {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
     body .page-body .content-wrapper ul.publication-list > li {
-      margin-bottom: 8px !important;
+      margin-bottom: 6px !important;
     }
     body .page-body .content-wrapper ul.publication-list > li:last-child {
       margin-bottom: 0 !important;
