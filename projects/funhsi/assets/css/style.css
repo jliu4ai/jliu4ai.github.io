@@ -268,6 +268,19 @@
     gap: 16px;
   }
 
+  .results-item{
+    display: grid;
+    gap: 10px;
+  }
+
+  .results-label{
+    margin: 0;
+    font-size: 15px;
+    color: #0f172a;
+    text-align: center;
+    font-weight: 600;
+  }
+
   .results-video{
     width: 100%;
     display: block;
