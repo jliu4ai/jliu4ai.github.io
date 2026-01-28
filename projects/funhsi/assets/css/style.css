@@ -260,6 +260,24 @@
   }
   .step-title{ font-weight: 700; }
   .step-text{ color: var(--muted); }
+
+  .results-grid{
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .results-video{
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 10px 28px rgba(15,23,42,0.12);
+    background: #000;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
   
   .gallery{
     margin-top: 14px;
@@ -298,5 +316,6 @@
     .video-grid{ grid-template-columns: 1fr; }
     .gallery{ grid-template-columns: repeat(2, 1fr); }
     .navlinks{ display: none; } /* 简化移动端导航 */
+    .results-grid{ grid-template-columns: 1fr; }
   }
   
