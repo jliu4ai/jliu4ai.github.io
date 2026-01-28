@@ -82,8 +82,18 @@
   .authors{
     text-align: center;
   }
-  .authors p{ margin: 6px 0; }
-  .affiliations{ color: var(--muted); font-size: 15px; }
+  .authors p{
+    margin: 8px 0;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .authors a{
+    color: #0f172a;
+  }
+  .affiliations{
+    color: #334155;
+    font-size: 16px;
+  }
   .venue{
     color: var(--muted);
     font-size: 15px;
