@@ -24,24 +24,25 @@
   
   .container{
     width: 100%;
-    max-width: var(--maxw);
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 0 18px 40px;
+    padding: 0 24px 40px;
   }
   
   .site-header{
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(255,255,255,0.86);
+    background: rgba(255,255,255,0.96);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 1px 0 rgba(15,23,42,0.03);
   }
   
   .topnav{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 14px 0;
     gap: 24px;
   }
@@ -49,6 +50,7 @@
   .brand{
     font-weight: 700;
     border-bottom: none;
+    font-size: 18px;
   }
   
   .navlinks{
@@ -58,23 +60,24 @@
   }
   
   .navlinks a{
-    font-size: 14px;
+    font-size: 15px;
     color: var(--muted);
     border-bottom: none;
   }
   .navlinks a:hover{ color: var(--text); }
   
   .hero{
-    padding: 28px 0 10px;
+    padding: 56px 0 18px;
     text-align: center;
-    max-width: 820px;
+    max-width: 880px;
     margin: 0 auto;
   }
   .title{
-    font-size: clamp(28px, 4vw, 44px);
-    line-height: 1.15;
-    margin: 18px 0 12px;
+    font-size: clamp(32px, 4.6vw, 50px);
+    line-height: 1.12;
+    margin: 12px 0 16px;
     letter-spacing: -0.02em;
+    font-weight: 800;
   }
   
   .authors{
@@ -82,7 +85,13 @@
   }
   .authors p{ margin: 6px 0; }
   .affiliations{ color: var(--muted); font-size: 15px; }
-  .venue{ color: var(--muted); font-size: 15px; }
+  .venue{
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
   
   .dot{ margin: 0 10px; color: var(--line); }
   
@@ -98,17 +107,23 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 14px;
+    padding: 10px 18px;
     border-radius: 999px;
-    background: var(--btn);
-    color: var(--btnText);
-    border: 1px solid var(--btn);
+    background: #f59e0b;
+    color: #ffffff;
+    border: 1px solid #f59e0b;
     font-size: 14px;
     font-weight: 600;
     border-bottom: none;
+    box-shadow: 0 8px 16px rgba(245,158,11,0.25);
+    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
   }
   
-  .btn:hover{ opacity: 0.92; }
+  .btn:hover{
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(245,158,11,0.3);
+  }
   .btn-ghost{
     background: var(--btnGhostBg);
     color: var(--btnGhostText);
@@ -136,23 +151,28 @@
   }
   
   .figure{
-    margin: 16px 0 0;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
+    margin: 24px auto 0;
+    padding: 0;
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.25);
+    max-width: 980px;
+    background: #000;
   }
   
   .figure img{
     width: 100%;
     height: auto;
-    border-radius: calc(var(--radius) - 8px);
     display: block;
   }
   
   .figure figcaption{
-    margin-top: 10px;
+    margin: 0;
+    padding: 12px 18px 14px;
     color: var(--muted);
     font-size: 14px;
+    background: #ffffff;
   }
   
   .video-grid{
