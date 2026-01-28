@@ -266,13 +266,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    align-items: start;
   }
 
   .results-item{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    justify-items: stretch;
-    align-items: start;
     width: 100%;
   }
 
