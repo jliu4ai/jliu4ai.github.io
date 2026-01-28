@@ -143,7 +143,7 @@
           <div class="step-body">
             <div class="step-title">Functionality-aware Contact Reasoning</div>
             <div class="step-text">
-              Use VLMs to infer functional elements from the task prompt, segment them in 2D, lift to 3D, and build an LLM-predicted contact graph.
+              This module identifies task-relevant functional elements in the scene, reconstructs their 3D geometry, and performs contact graph reasoning to produce the high-level interactions.
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@
           <div class="step-body">
             <div class="step-title">Contact-aware Body Initialization</div>
             <div class="step-text">
-              Contact-aware human inpainting + generator–critic loop reduces hallucination; estimate SMPL-X body pose and hand pose, then refine contact laterality.
+              This module leverages the inferred functional elements and contact relations to synthesize a human in the image and estimate the 3D body and the hand poses
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@
           <div class="step-body">
             <div class="step-title">Two-stage Body Refinement</div>
             <div class="step-text">
-              Optimize global alignment and arm reach first, then fine-tune full-body stability with collision, contact, and pose priors.
+             This module places the initialized 3D body into the 3D scene and performs stage-wise optimization to refine the body and hand poses, and human-scene contacts.
             </div>
           </div>
         </div>
