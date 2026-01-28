@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Project Title</title>
-  <meta name="description" content="Project page for Your Project Title." />
+  <title>FunHSI: Open-Vocabulary Functional 3D Human-Scene Interaction Generation</title>
+  <meta name="description" content="FunHSI: Training-free open-vocabulary functional 3D human-scene interaction generation from posed RGB-D and a task prompt." />
 
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- OpenGraph (optional but recommended) -->
-  <meta property="og:title" content="Your Project Title" />
-  <meta property="og:description" content="Project page for Your Project Title." />
+  <!-- OpenGraph -->
+  <meta property="og:title" content="FunHSI: Open-Vocabulary Functional 3D Human-Scene Interaction Generation" />
+  <meta property="og:description" content="Training-free, functionality-driven 3D human-scene interaction generation from posed RGB-D observations and open-vocabulary task prompts." />
   <meta property="og:image" content="assets/img/teaser.jpg" />
   <meta property="og:type" content="website" />
 </head>
@@ -20,7 +20,7 @@
   <header class="site-header">
     <div class="container">
       <nav class="topnav">
-        <a class="brand" href="#">Your Name</a>
+        <a class="brand" href="#">FunHSI</a>
         <div class="navlinks">
           <a href="#abstract">Abstract</a>
           <a href="#video">Video</a>
@@ -33,53 +33,77 @@
   </header>
 
   <main class="container">
-    <!-- Title -->
+    <!-- Hero -->
     <section class="hero">
-      <h1 class="title">Your Project Title: A Short Tagline</h1>
+      <h1 class="title">Open-Vocabulary Functional 3D Human-Scene Interaction Generation</h1>
 
       <div class="authors">
         <p>
-          <a href="https://your-homepage.com" target="_blank" rel="noopener">First Author</a><sup>1</sup>,
-          <a href="https://coauthor.com" target="_blank" rel="noopener">Second Author</a><sup>2</sup>,
-          <a href="https://coauthor.com" target="_blank" rel="noopener">Third Author</a><sup>1</sup>
+          <a href="https://jliu4ai.github.io/" target="_blank" rel="noopener">Jie Liu</a><sup>1,2</sup>,
+          <a href="#" target="_blank" rel="noopener">Yu Sun</a><sup>1</sup>,
+          <a href="#" target="_blank" rel="noopener">Alpar Cseke</a><sup>3</sup>,
+          <a href="#" target="_blank" rel="noopener">Yao Feng</a><sup>4</sup>,
+          <a href="#" target="_blank" rel="noopener">Nicolas Heron</a><sup>1</sup>,
+          <a href="#" target="_blank" rel="noopener">Michael J. Black</a><sup>3</sup>,
+          <a href="#" target="_blank" rel="noopener">Yan Zhang</a><sup>1</sup>
         </p>
+
         <p class="affiliations">
-          <span><sup>1</sup>University / Lab</span>
+          <span><sup>1</sup>Meshcapade</span>
           <span class="dot">•</span>
-          <span><sup>2</sup>Company / Institute</span>
+          <span><sup>2</sup>University of Amsterdam</span>
+          <span class="dot">•</span>
+          <span><sup>3</sup>Max Planck Institute for Intelligent Systems</span>
+          <span class="dot">•</span>
+          <span><sup>4</sup>Stanford University</span>
         </p>
-        <p class="venue">Conference / Journal, Year</p>
+
+        <!-- 你可以改成 “arXiv 2026” / “SIGGRAPH 2026 Submission” 等 -->
+        <p class="venue">arXiv</p>
       </div>
 
-      <!-- Buttons -->
+      <!-- Links: 按你实际仓库替换 -->
       <div class="buttons">
         <a class="btn" href="assets/files/paper.pdf" target="_blank" rel="noopener">Paper</a>
         <a class="btn" href="assets/files/supplement.pdf" target="_blank" rel="noopener">Supplement</a>
-        <a class="btn" href="https://youtu.be/yourvideo" target="_blank" rel="noopener">Video</a>
-        <a class="btn" href="https://github.com/yourname/yourrepo" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-ghost" href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" rel="noopener">arXiv</a>
+        <!-- 如果暂时没有视频/代码，就先注释掉 -->
+        <a class="btn" href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Video</a>
+        <a class="btn" href="https://github.com/YOUR_GITHUB/REPO" target="_blank" rel="noopener">Code</a>
+        <a class="btn btn-ghost" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">arXiv</a>
       </div>
 
-      <!-- One-sentence highlight -->
       <p class="tagline">
-        One or two sentences describing what your method does and why it matters.
+        A training-free framework that generates physically plausible and functionally correct 3D human–scene interactions
+        from posed RGB-D observations and open-vocabulary task prompts.
       </p>
 
-      <!-- Teaser image (optional) -->
+      <!-- Teaser: 建议放 Figure 1 或你项目页 teaser -->
       <figure class="figure">
-        <img src="assets/img/teaser.jpg" alt="Teaser image" />
+        <img src="assets/img/teaser.jpg" alt="FunHSI teaser figure" />
         <figcaption>
-          <strong>Teaser.</strong> A concise caption explaining the teaser figure.
+          <strong>FunHSI.</strong> Given posed RGB-D images, camera parameters, and a task description,
+          FunHSI automatically generates a 3D human that interacts with the appropriate functional element in the scene.
         </figcaption>
       </figure>
     </section>
 
-    <!-- Abstract -->
+    <!-- Abstract (from paper) -->
     <section id="abstract" class="section">
       <h2>Abstract</h2>
       <p>
-        Paste your abstract here. Keep it identical to the paper abstract (or a slightly shortened version).
-        It’s okay to include <em>italic</em> and <strong>bold</strong> emphasis.
+        Generating 3D humans that functionally interact with 3D scenes remains an open problem with applications in
+        embodied AI, robotics, and interactive content creation. The key challenge involves reasoning about both the semantics
+        of functional elements in 3D scenes and the 3D human poses required to achieve functionality-aware interaction.
+        Unfortunately, existing methods typically lack explicit reasoning over object functionality and the corresponding
+        human-scene contact, resulting in implausible or functionally incorrect interactions. We propose FunHSI, a training-free,
+        functionality-driven framework that enables functionally correct human-scene interactions from open-vocabulary task prompts.
+        Given a task prompt, FunHSI performs functionality-aware contact reasoning to identify functional scene elements,
+        reconstruct their 3D geometry, and model high-level interactions via a contact graph. We then leverage vision-language models
+        to synthesize a human performing the task in the image and estimate proposed 3D body and hand poses. Finally, the proposed
+        3D body configuration is refined via stage-wise optimization to ensure physical plausibility and functional correctness.
+        FunHSI supports both general interactions (e.g., “sitting on a sofa”) and fine-grained functional interactions
+        (e.g., “increasing the room temperature”), and consistently generates functionally correct and physically plausible interactions
+        across diverse indoor and outdoor scenes.
       </p>
     </section>
 
@@ -87,23 +111,20 @@
     <section id="video" class="section">
       <h2>Video</h2>
       <div class="video-grid">
-        <!-- YouTube embed -->
         <div class="video">
           <iframe
             src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID"
-            title="Project video"
+            title="FunHSI video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
         </div>
-
-        <!-- optional: short bullets -->
         <div class="video-notes">
           <ul>
-            <li>What the demo shows (1 line)</li>
-            <li>Main capability (1 line)</li>
-            <li>Key takeaway (1 line)</li>
+            <li>Training-free functional HSI from posed RGB-D + task prompt.</li>
+            <li>Contact graph bridges task intent and physical interaction.</li>
+            <li>Stage-wise optimization improves contact and reduces penetration.</li>
           </ul>
         </div>
       </div>
@@ -113,38 +134,49 @@
     <section id="method" class="section">
       <h2>How It Works</h2>
       <p>
-        3–6 sentences describing the pipeline at a high level. Try this structure:
-        (1) input, (2) core idea, (3) main modules, (4) optimization/training, (5) output.
+        FunHSI takes a set of posed RGB-D images and an open-vocabulary task prompt as input, and generates a 3D human
+        that accomplishes the specified task via functionally correct contact with the scene. The pipeline consists of three
+        modules: (i) <strong>Functionality-aware Contact Reasoning</strong> detects task-relevant functional elements, lifts 2D masks into 3D,
+        and uses LLM-based <em>contact graph reasoning</em> to infer body–scene contact relations;
+        (ii) <strong>Functionality-aware Body Initialization</strong> synthesizes a human in the image, estimates SMPL-X body pose and hand pose,
+        and refines the contact graph to resolve left–right ambiguity; (iii) <strong>Body Refinement</strong> performs two-stage optimization
+        with collision and contact objectives to ensure physical plausibility and functional correctness.
       </p>
 
       <figure class="figure">
-        <img src="assets/img/method.jpg" alt="Method overview" />
+        <img src="assets/img/method.jpg" alt="FunHSI method overview" />
         <figcaption>
-          <strong>Overview.</strong> Replace with your method figure caption.
+          <strong>Pipeline overview.</strong> FunHSI: functionality grounding + contact graph reasoning,
+          contact-aware human initialization, and two-stage refinement for stable contacts and low penetration.
         </figcaption>
       </figure>
 
-      <!-- Optional: numbered steps -->
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-body">
-            <div class="step-title">Step title</div>
-            <div class="step-text">One sentence about what happens in this step.</div>
+            <div class="step-title">Functionality-aware Contact Reasoning</div>
+            <div class="step-text">
+              Use VLMs to infer functional elements from the task prompt, segment them in 2D, lift to 3D, and build an LLM-predicted contact graph.
+            </div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-body">
-            <div class="step-title">Step title</div>
-            <div class="step-text">One sentence about what happens in this step.</div>
+            <div class="step-title">Body Initialization</div>
+            <div class="step-text">
+              Contact-aware human inpainting + generator–critic loop reduces hallucination; estimate SMPL-X body pose and hand pose, then refine contact laterality.
+            </div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
-            <div class="step-title">Step title</div>
-            <div class="step-text">One sentence about what happens in this step.</div>
+            <div class="step-title">Two-stage Body Refinement</div>
+            <div class="step-text">
+              Optimize global alignment and arm reach first, then fine-tune full-body stability with collision, contact, and pose priors.
+            </div>
           </div>
         </div>
       </div>
@@ -154,23 +186,33 @@
     <section id="results" class="section">
       <h2>Results</h2>
       <p>
-        Briefly describe qualitative and quantitative results (2–4 sentences).
-        Mention datasets, metrics, or user study outcomes if applicable.
+        FunHSI achieves strong performance on a benchmark derived from SceneFun3D under both
+        <strong>general HSI</strong> and <strong>functional HSI</strong> settings. It substantially improves functional contact distance compared to
+        adapted GenZI and GenHSI baselines, while maintaining competitive semantic consistency and non-collision scores.
+        A perceptual user study shows that participants strongly prefer FunHSI outputs over baselines, with higher preference margins
+        in functional tasks that require reasoning about fine-grained functional elements.
       </p>
 
       <figure class="figure">
-        <img src="assets/img/results.jpg" alt="Results figure" />
+        <img src="assets/img/results.jpg" alt="FunHSI results figure" />
         <figcaption>
-          <strong>Results.</strong> Replace with your results figure caption.
+          <strong>Qualitative results.</strong> FunHSI robustly grounds interactions on task-relevant functional elements (e.g., knobs, handles, switches)
+          and produces physically plausible contacts across diverse scenes.
         </figcaption>
       </figure>
 
-      <!-- Optional: small gallery -->
-      <div class="gallery">
-        <img src="assets/img/teaser.jpg" alt="Example 1" />
-        <img src="assets/img/teaser.jpg" alt="Example 2" />
-        <img src="assets/img/teaser.jpg" alt="Example 3" />
-        <img src="assets/img/teaser.jpg" alt="Example 4" />
+      <!-- 你也可以把下面的“数字”改成你最终图里展示的版本 -->
+      <div class="steps" style="margin-top:16px;">
+        <div class="step">
+          <div class="step-num">★</div>
+          <div class="step-body">
+            <div class="step-title">User Study Preference</div>
+            <div class="step-text">
+              Overall preference (vs. baselines) is strong; functional tasks show larger margins than general tasks.
+              (Replace this line with the exact numbers shown in your final figure.)
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -178,11 +220,11 @@
     <section id="citation" class="section">
       <h2>Citation</h2>
       <p>If you find this work useful, please consider citing:</p>
-      <pre class="bibtex"><code>@inproceedings{yourkey2026yourtitle,
-  title     = {Your Project Title},
-  author    = {First Author and Second Author and Third Author},
-  booktitle = {Proceedings of ...},
-  year      = {2026}
+      <pre class="bibtex"><code>@article{liu2026funhsi,
+  title   = {Open-Vocabulary Functional 3D Human-Scene Interaction Generation},
+  author  = {Liu, Jie and Sun, Yu and Cseke, Alpar and Feng, Yao and Heron, Nicolas and Black, Michael J. and Zhang, Yan},
+  journal = {arXiv preprint},
+  year    = {2026}
 }</code></pre>
     </section>
 
@@ -190,14 +232,15 @@
     <section class="section">
       <h2>Acknowledgements</h2>
       <p>
-        Funding, compute, collaborators, asset credits (e.g., Sketchfab),
-        and any disclaimers. Keep it short.
+        We sincerely thank Alexandros Delitzas and Francis Engelmann for guidance on SceneFun3D; Priyanka Patel for guidance on CameraHMR;
+        and Muhammed Kocabas for fruitful discussions on foundation models. We also thank Nitin Saini and Nathan Bajandas for help with Unreal Engine.
+        This work was done when Jie Liu was an intern at Meshcapade.
       </p>
       <p class="last-updated">Last updated: January, 2026</p>
     </section>
 
     <footer class="footer">
-      <p>© <span id="year"></span> Your Name. Built as a simple static GitHub Pages site.</p>
+      <p>© <span id="year"></span> FunHSI authors. Project page hosted on GitHub Pages.</p>
     </footer>
   </main>
 
