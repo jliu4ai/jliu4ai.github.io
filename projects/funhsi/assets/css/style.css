@@ -272,6 +272,7 @@
     display: grid;
     gap: 10px;
     justify-items: center;
+    width: 100%;
   }
 
   .results-label{
