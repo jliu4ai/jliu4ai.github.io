@@ -161,7 +161,8 @@
     background: #000;
   }
   
-  .figure img{
+  .figure img,
+  .figure video{
     width: 100%;
     height: auto;
     display: block;
