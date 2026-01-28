@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Project Title</title>
+  <meta name="description" content="Project page for Your Project Title." />
+
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- OpenGraph (optional but recommended) -->
+  <meta property="og:title" content="Your Project Title" />
+  <meta property="og:description" content="Project page for Your Project Title." />
+  <meta property="og:image" content="assets/img/teaser.jpg" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="topnav">
+        <a class="brand" href="#">Your Name</a>
+        <div class="navlinks">
+          <a href="#abstract">Abstract</a>
+          <a href="#video">Video</a>
+          <a href="#method">How It Works</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Title -->
+    <section class="hero">
+      <h1 class="title">Your Project Title: A Short Tagline</h1>
+
+      <div class="authors">
+        <p>
+          <a href="https://your-homepage.com" target="_blank" rel="noopener">First Author</a><sup>1</sup>,
+          <a href="https://coauthor.com" target="_blank" rel="noopener">Second Author</a><sup>2</sup>,
+          <a href="https://coauthor.com" target="_blank" rel="noopener">Third Author</a><sup>1</sup>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup>University / Lab</span>
+          <span class="dot">•</span>
+          <span><sup>2</sup>Company / Institute</span>
+        </p>
+        <p class="venue">Conference / Journal, Year</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <a class="btn" href="assets/files/paper.pdf" target="_blank" rel="noopener">Paper</a>
+        <a class="btn" href="assets/files/supplement.pdf" target="_blank" rel="noopener">Supplement</a>
+        <a class="btn" href="https://youtu.be/yourvideo" target="_blank" rel="noopener">Video</a>
+        <a class="btn" href="https://github.com/yourname/yourrepo" target="_blank" rel="noopener">Code</a>
+        <a class="btn btn-ghost" href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" rel="noopener">arXiv</a>
+      </div>
+
+      <!-- One-sentence highlight -->
+      <p class="tagline">
+        One or two sentences describing what your method does and why it matters.
+      </p>
+
+      <!-- Teaser image (optional) -->
+      <figure class="figure">
+        <img src="assets/img/teaser.jpg" alt="Teaser image" />
+        <figcaption>
+          <strong>Teaser.</strong> A concise caption explaining the teaser figure.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Abstract -->
+    <section id="abstract" class="section">
+      <h2>Abstract</h2>
+      <p>
+        Paste your abstract here. Keep it identical to the paper abstract (or a slightly shortened version).
+        It’s okay to include <em>italic</em> and <strong>bold</strong> emphasis.
+      </p>
+    </section>
+
+    <!-- Video -->
+    <section id="video" class="section">
+      <h2>Video</h2>
+      <div class="video-grid">
+        <!-- YouTube embed -->
+        <div class="video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID"
+            title="Project video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- optional: short bullets -->
+        <div class="video-notes">
+          <ul>
+            <li>What the demo shows (1 line)</li>
+            <li>Main capability (1 line)</li>
+            <li>Key takeaway (1 line)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section id="method" class="section">
+      <h2>How It Works</h2>
+      <p>
+        3–6 sentences describing the pipeline at a high level. Try this structure:
+        (1) input, (2) core idea, (3) main modules, (4) optimization/training, (5) output.
+      </p>
+
+      <figure class="figure">
+        <img src="assets/img/method.jpg" alt="Method overview" />
+        <figcaption>
+          <strong>Overview.</strong> Replace with your method figure caption.
+        </figcaption>
+      </figure>
+
+      <!-- Optional: numbered steps -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Step title</div>
+            <div class="step-text">One sentence about what happens in this step.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Step title</div>
+            <div class="step-text">One sentence about what happens in this step.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Step title</div>
+            <div class="step-text">One sentence about what happens in this step.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section">
+      <h2>Results</h2>
+      <p>
+        Briefly describe qualitative and quantitative results (2–4 sentences).
+        Mention datasets, metrics, or user study outcomes if applicable.
+      </p>
+
+      <figure class="figure">
+        <img src="assets/img/results.jpg" alt="Results figure" />
+        <figcaption>
+          <strong>Results.</strong> Replace with your results figure caption.
+        </figcaption>
+      </figure>
+
+      <!-- Optional: small gallery -->
+      <div class="gallery">
+        <img src="assets/img/teaser.jpg" alt="Example 1" />
+        <img src="assets/img/teaser.jpg" alt="Example 2" />
+        <img src="assets/img/teaser.jpg" alt="Example 3" />
+        <img src="assets/img/teaser.jpg" alt="Example 4" />
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section id="citation" class="section">
+      <h2>Citation</h2>
+      <p>If you find this work useful, please consider citing:</p>
+      <pre class="bibtex"><code>@inproceedings{yourkey2026yourtitle,
+  title     = {Your Project Title},
+  author    = {First Author and Second Author and Third Author},
+  booktitle = {Proceedings of ...},
+  year      = {2026}
+}</code></pre>
+    </section>
+
+    <!-- Acknowledgements -->
+    <section class="section">
+      <h2>Acknowledgements</h2>
+      <p>
+        Funding, compute, collaborators, asset credits (e.g., Sketchfab),
+        and any disclaimers. Keep it short.
+      </p>
+      <p class="last-updated">Last updated: January, 2026</p>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Your Name. Built as a simple static GitHub Pages site.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
