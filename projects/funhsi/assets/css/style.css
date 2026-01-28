@@ -281,6 +281,10 @@
     color: #0f172a;
     text-align: center;
     font-weight: 600;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .results-video{
