@@ -271,6 +271,7 @@
   .results-item{
     display: grid;
     gap: 10px;
+    justify-items: center;
   }
 
   .results-label{
