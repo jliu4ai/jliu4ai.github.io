@@ -271,7 +271,8 @@
   .results-item{
     display: grid;
     gap: 10px;
-    justify-items: center;
+    justify-items: stretch;
+    align-items: start;
     width: 100%;
   }
 
@@ -281,7 +282,9 @@
     color: #0f172a;
     text-align: center;
     font-weight: 600;
-    min-height: 40px;
+    width: 100%;
+    min-height: 44px;
+    line-height: 1.35;
     display: flex;
     align-items: center;
     justify-content: center;
