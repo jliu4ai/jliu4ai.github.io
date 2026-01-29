@@ -164,7 +164,7 @@
     text-align: center;
   }
   
-  .section p{
+  .section p:not(.section-subtitle){
     color: #1f2937;
     font-size: 16px;
     text-align: justify;
