@@ -170,6 +170,13 @@
     text-align: justify;
     text-justify: inter-word;
   }
+
+  .section-subtitle{
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: #94a3b8;
+    text-align: center;
+  }
   
   .figure{
     margin: 22px auto 0;
