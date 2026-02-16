@@ -200,6 +200,39 @@
       margin-top: 0 !important;
       margin-bottom: 6px !important;
     }
+    /* Language toggle button */
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 9999;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      color: #111827;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    }
+    .lang-toggle:hover {
+      background: #f9fafb;
+    }
+    .translate-hidden {
+      position: fixed;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    /* Hide Google Translate banner */
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+    body {
+      top: 0 !important;
+    }
   </style>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
@@ -256,6 +289,8 @@
   <title>Jie Liu</title>
 </head>
 <body id="top" class="page-wrapper">
+  <button id="lang-toggle" class="lang-toggle" type="button">中文</button>
+  <div id="google_translate_element" class="translate-hidden" aria-hidden="true"></div>
   <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
   <div class="page-body">
     <span class="js-widget-page d-none"></span>
@@ -536,6 +571,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          includedLanguages: 'en,zh-CN',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+    }
+
+    function setTranslateLang(lang) {
+      const select = document.querySelector('select.goog-te-combo');
+      if (!select) return;
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('lang-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', function () {
+        const select = document.querySelector('select.goog-te-combo');
+        const current = select ? select.value : 'en';
+        const next = current === 'zh-CN' ? 'en' : 'zh-CN';
+        setTranslateLang(next);
+        toggle.textContent = next === 'zh-CN' ? 'English' : '中文';
+      });
+    });
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script id="search-hit-fuse-template" type="text/x-template">
     <div class="search-hit" id="summary-{{key}}">
       <div class="search-hit-content">
