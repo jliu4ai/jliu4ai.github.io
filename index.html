@@ -218,6 +218,14 @@
     .lang-toggle:hover {
       background: #f9fafb;
     }
+    @media (max-width: 768px) {
+      .lang-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+    }
     .translate-hidden {
       position: fixed;
       left: -9999px;
@@ -585,21 +593,29 @@
 
     function setTranslateLang(lang) {
       const select = document.querySelector('select.goog-te-combo');
-      if (!select) return;
+      if (!select) return false;
       select.value = lang;
       select.dispatchEvent(new Event('change'));
+      return true;
     }
 
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.getElementById('lang-toggle');
       if (!toggle) return;
-      toggle.addEventListener('click', function () {
+      const handleToggle = function () {
         const select = document.querySelector('select.goog-te-combo');
         const current = select ? select.value : 'en';
         const next = current === 'zh-CN' ? 'en' : 'zh-CN';
-        setTranslateLang(next);
+        const applied = setTranslateLang(next);
+        if (!applied) {
+          setTimeout(function () {
+            setTranslateLang(next);
+          }, 300);
+        }
         toggle.textContent = next === 'zh-CN' ? 'English' : '中文';
-      });
+      };
+      toggle.addEventListener('click', handleToggle);
+      toggle.addEventListener('touchstart', handleToggle, { passive: true });
     });
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
