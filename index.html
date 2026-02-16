@@ -226,21 +226,8 @@
         font-size: 12px;
       }
     }
-    .translate-hidden {
-      position: fixed;
-      left: -9999px;
-      top: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    /* Hide Google Translate banner */
-    .goog-te-banner-frame {
-      display: none !important;
-    }
-    body {
-      top: 0 !important;
-    }
+    body[data-lang="en"] [data-lang="zh"] { display: none; }
+    body[data-lang="zh"] [data-lang="en"] { display: none; }
   </style>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4VNN3PB3"></script>
@@ -296,9 +283,8 @@
   </script>
   <title>Jie Liu</title>
 </head>
-<body id="top" class="page-wrapper">
+<body id="top" class="page-wrapper" data-lang="en">
   <button id="lang-toggle" class="lang-toggle" type="button">中文</button>
-  <div id="google_translate_element" class="translate-hidden" aria-hidden="true"></div>
   <script src="/js/wowchemy-init.min.2656b96b9273c77f9f1758e7dfbeb3fe.js"></script>
   <div class="page-body">
     <span class="js-widget-page d-none"></span>
@@ -310,12 +296,22 @@
             <div id="profile">
               <img class="avatar avatar-circle" src="/authors/admin/Jie.jpeg" alt="Jie Liu">
               <div class="portrait-title">
-                <h2>Jie Liu (刘杰)</h2>
-                <h3>Postdoc Researcher</h3>
-                <h3>Eindhoven University of Technology (TU/e)</h3>
+                <h2>
+                  <span data-lang="en">Jie Liu (刘杰)</span>
+                  <span data-lang="zh">刘杰 (Jie Liu)</span>
+                </h2>
+                <h3>
+                  <span data-lang="en">Postdoc Researcher</span>
+                  <span data-lang="zh">博士后研究员</span>
+                </h3>
+                <h3>
+                  <span data-lang="en">Eindhoven University of Technology (TU/e)</span>
+                  <span data-lang="zh">埃因霍温理工大学 (TU/e)</span>
+                </h3>
                 <h3>
                   <a href="https://amore-labs.github.io/website/" target="_blank" rel="noopener">
-                    <span>AMOR/e Lab</span>
+                    <span data-lang="en">AMOR/e Lab</span>
+                    <span data-lang="zh">AMOR/e 实验室</span>
                   </a>
                 </h3>
                 <h3>
@@ -354,63 +350,154 @@
           <!-- 右侧内容 -->
           <div class="col-12 col-lg-8">
             <div class="content-wrapper">
-              <h3>About Me</h3>
+              <h3>
+                <span data-lang="en">About Me</span>
+                <span data-lang="zh">关于我</span>
+              </h3>
               <div class="article-style">
-                <p>I am a Postdoc Researcher at TU/e <a href="https://amore-labs.github.io/website/" target="_blank" rel="noopener">AMOR/e Lab</a>, working with <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Prof. Joaquin Vanschoren</a> on LLMs and MLLMs.
-                  Previously I was an <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a> Ph.D. candidate at <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>,
-                  University of Amsterdam (UvA), supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and
-                  <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
-                  I did a fantastic internship at <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a>, advised by <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Dr. Yan Zhang</a>, <a href="https://www.yusun.work/" target="_blank" rel="noopener">Dr. Yu Sun</a>, and <a href="https://is.mpg.de/ps/person/black" target="_blank" rel="noopener">Prof. Michael Black</a>.
-                  I also worked closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>.
+                <p>
+                  <span data-lang="en">
+                    I am a Postdoc Researcher at TU/e <a href="https://amore-labs.github.io/website/" target="_blank" rel="noopener">AMOR/e Lab</a>, working with <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Prof. Joaquin Vanschoren</a> on LLMs and MLLMs.
+                    Previously I was an <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a> Ph.D. candidate at <a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a>,
+                    University of Amsterdam (UvA), supervised by <a href="https://www.egavves.com/" target="_blank" rel="noopener">Prof. Efstratios Gavves</a> and
+                    <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Prof. Jan-Jakob Sonke</a>.
+                    I did a fantastic internship at <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a>, advised by <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Dr. Yan Zhang</a>, <a href="https://www.yusun.work/" target="_blank" rel="noopener">Dr. Yu Sun</a>, and <a href="https://is.mpg.de/ps/person/black" target="_blank" rel="noopener">Prof. Michael Black</a>.
+                    I also worked closely with <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a>.
+                  </span>
+                  <span data-lang="zh">
+                    我目前是 TU/e <a href="https://amore-labs.github.io/website/" target="_blank" rel="noopener">AMOR/e Lab</a> 的博士后研究员，与 <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Joaquin Vanschoren 教授</a>合作研究 LLMs 与 MLLMs。
+                    此前我在阿姆斯特丹大学（UvA）<a href="https://ivi.fnwi.uva.nl/vislab/" target="_blank" rel="noopener">VISLAB</a> 担任 <a href="https://ellis.eu/" target="_blank" rel="noopener">ELLIS</a> 博士生，
+                    导师为 <a href="https://www.egavves.com/" target="_blank" rel="noopener">Efstratios Gavves 教授</a> 和
+                    <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/" target="_blank" rel="noopener">Jan-Jakob Sonke 教授</a>。
+                    我曾在 <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a> 实习，由 <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Yan Zhang 博士</a>、<a href="https://www.yusun.work/" target="_blank" rel="noopener">Yu Sun 博士</a> 和 <a href="https://is.mpg.de/ps/person/black" target="_blank" rel="noopener">Michael Black 教授</a> 指导。
+                    此外，我与 <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Pan Zhou 教授</a>有紧密合作。
+                  </span>
                 </p>
-                <p>I serve as a regular reviewer for CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, T-PAMI and IJCV.</p>
-              </div>
-              <h3>Research Interests</h3>
-              <div class="article-style">
-                <p>My research aims to develop <span style="font-weight: 700; color: #1565c0;">human-centered AI</span> that augment human capabilities in <b>perception</b>, <b>reasoning</b>, and <b>interaction</b> with the world. To achieve this, I am focusing on the following topics:</p>
-                <p class="compact-paragraph">&#8226;  <b>Generalizable Perception</b>: interactive segmentation, few-shot segmentation, 3D scene understanding</p>
-                <p class="compact-paragraph">&#8226;  <b>Foundation Models</b>: LLMs and MLLMs reasoning, vision-language models, multi-modal learning</p>
-                <p class="compact-paragraph">&#8226;  <b>Embodied Agents</b>:  world model, human-scene interaction, multi-agent cooperation</p>
-              </div>
-              <h3>Hobbies</h3>
-              <div class="article-style">
-                <p>I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
-                  Whether on the slopes, the court, or in training, I love pushing my limits and shaping my skills.
+                <p>
+                  <span data-lang="en">I serve as a regular reviewer for CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, T-PAMI and IJCV.</span>
+                  <span data-lang="zh">我长期担任 CVPR、ICCV、ECCV、NeurIPS、ICLR、ICML、T-PAMI 和 IJCV 的审稿人。</span>
                 </p>
               </div>
-              <h3 id="news">News</h3>
+              <h3>
+                <span data-lang="en">Research Interests</span>
+                <span data-lang="zh">研究兴趣</span>
+              </h3>
+              <div class="article-style">
+                <p>
+                  <span data-lang="en">My research aims to develop <span style="font-weight: 700; color: #1565c0;">human-centered AI</span> that augment human capabilities in <b>perception</b>, <b>reasoning</b>, and <b>interaction</b> with the world. To achieve this, I am focusing on the following topics:</span>
+                  <span data-lang="zh">我的研究旨在发展<span style="font-weight: 700; color: #1565c0;">以人为中心的 AI</span>，增强人类在<b>感知</b>、<b>推理</b>与<b>交互</b>方面的能力。为此我重点关注以下方向：</span>
+                </p>
+                <p class="compact-paragraph">
+                  <span data-lang="en">&#8226;  <b>Generalizable Perception</b>: interactive segmentation, few-shot segmentation, 3D scene understanding</span>
+                  <span data-lang="zh">&#8226;  <b>可泛化感知</b>：交互式分割、小样本分割、3D 场景理解</span>
+                </p>
+                <p class="compact-paragraph">
+                  <span data-lang="en">&#8226;  <b>Foundation Models</b>: LLMs and MLLMs reasoning, vision-language models, multi-modal learning</span>
+                  <span data-lang="zh">&#8226;  <b>基础模型</b>：LLMs 与 MLLMs 推理、视觉-语言模型、多模态学习</span>
+                </p>
+                <p class="compact-paragraph">
+                  <span data-lang="en">&#8226;  <b>Embodied Agents</b>:  world model, human-scene interaction, multi-agent cooperation</span>
+                  <span data-lang="zh">&#8226;  <b>具身智能体</b>：世界模型、人-场景交互、多智能体协作</span>
+                </p>
+              </div>
+              <h3>
+                <span data-lang="en">Hobbies</span>
+                <span data-lang="zh">兴趣爱好</span>
+              </h3>
+              <div class="article-style">
+                <p>
+                  <span data-lang="en">
+                    I'm a sports enthusiast with a passion for snowboarding and badminton. I also hold a 2nd-degree black belt in Taekwondo.
+                    Whether on the slopes, the court, or in training, I love pushing my limits and shaping my skills.
+                  </span>
+                  <span data-lang="zh">
+                    我热爱运动，尤其喜欢滑雪板和羽毛球，并拥有跆拳道二段黑带。
+                    无论在雪道、球场还是训练中，我都享受挑战自我、打磨技能。
+                  </span>
+                </p>
+              </div>
+              <h3 id="news">
+                <span data-lang="en">News</span>
+                <span data-lang="zh">新闻</span>
+              </h3>
               <div class="news-container">
                 <ul>
-                  <li><b>[Nov 2025]</b> I started my postdoc at TU/e, working with <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Prof. Joaquin Vanschoren</a> on LLMs and MLLMs.</li>
-                  <li><b>[June 2025]</b> One paper on vision-language models was accepted in ICCV 2025, see you in Hawaii!</li>
-                  <li><b>[June 2025]</b> I started my internship at <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a> and work with <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Dr. Yan Zhang</a> on motion generation.</li>
-                  <li><b>[May 2025]</b> Our work <b>NPISeg3D</b> on Interactive 3D Segmentation was accepted in ICML2025! See you in Vancouver!</li>
-                  <li><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</li>
-                  <li><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</li>
-                  <li><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot</a> for Interactive Segmentation in ECCV2024, see you in Milano.</li>
-                  <li><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</li>
-                  <li><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</li>
-                  <li><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</li>
-                  <li><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</li>
-                  <li><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</li>
-                  <li><b>[Sept 2021]</b> I joined VISLAB as a PhD candidate.</li>
+                  <li>
+                    <span data-lang="en"><b>[Nov 2025]</b> I started my postdoc at TU/e, working with <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Prof. Joaquin Vanschoren</a> on LLMs and MLLMs.</span>
+                    <span data-lang="zh"><b>[2025年11月]</b> 我开始在 TU/e 从事博士后研究，与 <a href="https://joaquinvanschoren.github.io/home/" target="_blank" rel="noopener">Joaquin Vanschoren 教授</a>合作研究 LLMs 与 MLLMs。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[June 2025]</b> One paper on vision-language models was accepted in ICCV 2025, see you in Hawaii!</span>
+                    <span data-lang="zh"><b>[2025年6月]</b> 一篇关于视觉-语言模型的论文被 ICCV 2025 接收，夏威夷见！</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[June 2025]</b> I started my internship at <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a> and work with <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Dr. Yan Zhang</a> on motion generation.</span>
+                    <span data-lang="zh"><b>[2025年6月]</b> 我开始在 <a href="https://meshcapade.com/" target="_blank" rel="noopener">Meshcapade</a> 实习，与 <a href="https://yz-cnsdqz.github.io/" target="_blank" rel="noopener">Yan Zhang 博士</a>合作研究动作生成。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[May 2025]</b> Our work <b>NPISeg3D</b> on Interactive 3D Segmentation was accepted in ICML2025! See you in Vancouver!</span>
+                    <span data-lang="zh"><b>[2025年5月]</b> 我们关于交互式 3D 分割的工作 <b>NPISeg3D</b> 被 ICML 2025 接收！温哥华见！</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[Jan 2025]</b> <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a>, our first work on Embodied Agents, was accepted in ICLR2025, see you in Singapore.</span>
+                    <span data-lang="zh"><b>[2025年1月]</b> 我们在具身智能体方向的首个工作 <a href="https://arxiv.org/pdf/2411.04679?" target="_blank" rel="noopener">CaPo</a> 被 ICLR 2025 接收，新加坡见。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[Sept 2024]</b> I am visiting <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Prof. Pan Zhou</a> in Singapore.</span>
+                    <span data-lang="zh"><b>[2024年9月]</b> 我在新加坡访问 <a href="https://panzhous.github.io/" target="_blank" rel="noopener">Pan Zhou 教授</a>。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[July 2024]</b> We present <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot</a> for Interactive Segmentation in ECCV2024, see you in Milano.</span>
+                    <span data-lang="zh"><b>[2024年7月]</b> 我们在 ECCV 2024 展示交互式分割工作 <a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank" rel="noopener">CPlot</a>，米兰见。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[June 2024]</b> One paper with Wenzhe Yin on Domain Adaptation was accepted in UAI 2024, see you in Barcelona.</span>
+                    <span data-lang="zh"><b>[2024年6月]</b> 我与 Wenzhe Yin 合作的域自适应论文被 UAI 2024 接收，巴塞罗那见。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[Sept 2023]</b> We present prototype adaption for Few-shot point cloud segmentation in 3DV2024, see you in Davos.</span>
+                    <span data-lang="zh"><b>[2023年9月]</b> 我们在 3DV 2024 展示小样本点云分割的原型自适应方法，达沃斯见。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[Sept 2022]</b> Our work on Few-shot Segmentation with Graph Convolution Network was accepted to BMVC2022.</span>
+                    <span data-lang="zh"><b>[2022年9月]</b> 我们关于图卷积的小样本分割工作被 BMVC 2022 接收。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[June 2022]</b> One paper with Haochen Wang on Few-shot Segmentation was accepted to ACM MM 2022.</span>
+                    <span data-lang="zh"><b>[2022年6月]</b> 我与 Haochen Wang 合作的小样本分割论文被 ACM MM 2022 接收。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[March 2022]</b> Our work on Few-shot Segmentation with Prototype Convolution was accepted to CVPR 2022.</span>
+                    <span data-lang="zh"><b>[2022年3月]</b> 我们关于原型卷积的小样本分割工作被 CVPR 2022 接收。</span>
+                  </li>
+                  <li>
+                    <span data-lang="en"><b>[Sept 2021]</b> I joined VISLAB as a PhD candidate.</span>
+                    <span data-lang="zh"><b>[2021年9月]</b> 我加入 VISLAB 成为博士生。</span>
+                  </li>
                 </ul>
               </div>
-              <h3 id="projects">Recent Projects</h3>
+              <h3 id="projects">
+                <span data-lang="en">Recent Projects</span>
+                <span data-lang="zh">近期项目</span>
+              </h3>
               <div class="article-style">
                 <ul class="publication-list" style="list-style: none; padding-left: 0; margin: 0;">
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <video src="publication_jie/FunHSI_Demo_Final.mp4" autoplay loop muted playsinline preload="metadata" style="display: block; width: 150px; height: 100px; object-fit: contain; background: #000; margin-right: 10px; flex-shrink: 0;"></video>
                       <div style="flex: 1; text-align: left;">
-                        <b>Open-Vocabulary Functional 3D Human-Scene Interaction Generation</b><br>
-                        <b>Jie Liu</b>, Yu Sun, Alpár Cseke, Yao Feng, Nicolas Hron, Michael Black, Yan Zhang<br>
-                        <b>arXiv, 2026 — work done as an intern at Meshcapade</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">FunHSI is a training-free framework that generates physically plausible and functionally correct 3D human-scene interactions from open-vocabulary prompts and posed RGB-D images.</span><br>
-                        [<a href="https://jliu4ai.github.io/projects/funhsi/" target="_blank">Project</a>]
-                        [<a href="https://arxiv.org/pdf/2601.20835" target="_blank">Paper</a>]
-                        [<a href="https://youtu.be/0wKSViA_39A" target="_blank">Video</a>]
-                        [<a href="https://github.com/jliu4ai/FunHSI" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Open-Vocabulary Functional 3D Human-Scene Interaction Generation</b></span>
+                        <span data-lang="zh"><b>开放词汇的功能性三维人-场景交互生成</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Yu Sun, Alpár Cseke, Yao Feng, Nicolas Hron, Michael Black, Yan Zhang</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Yu Sun, Alpár Cseke, Yao Feng, Nicolas Hron, Michael Black, Yan Zhang</span><br>
+                        <span data-lang="en"><b>arXiv, 2026 — work done as an intern at Meshcapade</b></span>
+                        <span data-lang="zh"><b>arXiv，2026 — 在 Meshcapade 实习期间完成</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">FunHSI is a training-free framework that generates physically plausible and functionally correct 3D human-scene interactions from open-vocabulary prompts and posed RGB-D images.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">FunHSI 是一个无需训练的框架，可从开放词汇提示与有位姿的 RGB-D 图像生成物理可行且功能正确的 3D 人-场景交互。</span></span><br>
+                        [<a href="https://jliu4ai.github.io/projects/funhsi/" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
+                        [<a href="https://arxiv.org/pdf/2601.20835" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://youtu.be/0wKSViA_39A" target="_blank"><span data-lang="en">Video</span><span data-lang="zh">视频</span></a>]
+                        [<a href="https://github.com/jliu4ai/FunHSI" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -418,12 +505,16 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/fewclip_iccv2025.gif" alt="Probabilistic Calibration" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation</b><br>
-                        <b>Jie Liu</b>, Jiayi Shen, Pan Zhou, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>International Conference on Computer Vision (ICCV), 2025</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic prototype calibration method of vision-language models for generalized few-shot segmentation to improve model generalization without forgetting.</span><br>
-                        [<a href="https://arxiv.org/pdf/2506.22979" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/FewCLIP" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation</b></span>
+                        <span data-lang="zh"><b>面向广义小样本语义分割的视觉-语言模型概率原型校准</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Jiayi Shen, Pan Zhou, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Jiayi Shen, Pan Zhou, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>International Conference on Computer Vision (ICCV), 2025</b></span>
+                        <span data-lang="zh"><b>国际计算机视觉大会（ICCV），2025</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic prototype calibration method of vision-language models for generalized few-shot segmentation to improve model generalization without forgetting.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种概率原型校准方法，用于广义小样本分割，提升模型泛化能力并减缓遗忘。</span></span><br>
+                        [<a href="https://arxiv.org/pdf/2506.22979" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/FewCLIP" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -431,13 +522,17 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/NPISeg3D.gif" alt="NPISeg3D" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>NPISeg3D: Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</b><br>
-                        <b>Jie Liu</b>, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>International Conference on Machine Learning (ICML), 2025</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic method for interactive 3D segmentation to facilitate uncertainty estimation and few-shot generalization.</span><br>
-                        [<a href="https://jliu4ai.github.io/NPISeg3D_projectpage/" target="_blank">Project</a>]
-                        [<a href="/media/NPISeg3D.pdf" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/NPISeg3D" target="_blank">Code</a>]
+                        <span data-lang="en"><b>NPISeg3D: Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</b></span>
+                        <span data-lang="zh"><b>NPISeg3D：层级神经过程的概率交互式 3D 分割</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>International Conference on Machine Learning (ICML), 2025</b></span>
+                        <span data-lang="zh"><b>国际机器学习大会（ICML），2025</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic method for interactive 3D segmentation to facilitate uncertainty estimation and few-shot generalization.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种用于交互式 3D 分割的概率方法，支持不确定性估计与小样本泛化。</span></span><br>
+                        [<a href="https://jliu4ai.github.io/NPISeg3D_projectpage/" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
+                        [<a href="/media/NPISeg3D.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/NPISeg3D" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -445,12 +540,16 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="media/capo.gif" alt="CaPo Demo" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>CaPo: Cooperative Plan Optimization for Efficient Embodied Multi-agent Cooperation</b><br>
-                        <b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>International Conference on Learning Representations (ICLR), 2025</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">An efficient plan optimization method with LLMs for embodied multi-agent cooperation.</span><br>
-                        [<a href="https://arxiv.org/pdf/2411.04679" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/capo" target="_blank">Code</a>]
+                        <span data-lang="en"><b>CaPo: Cooperative Plan Optimization for Efficient Embodied Multi-agent Cooperation</b></span>
+                        <span data-lang="zh"><b>CaPo：高效具身多智能体协作的协同计划优化</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>International Conference on Learning Representations (ICLR), 2025</b></span>
+                        <span data-lang="zh"><b>国际学习表征会议（ICLR），2025</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">An efficient plan optimization method with LLMs for embodied multi-agent cooperation.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种结合 LLMs 的高效计划优化方法，用于具身多智能体协作。</span></span><br>
+                        [<a href="https://arxiv.org/pdf/2411.04679" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/capo" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -459,13 +558,17 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/cplot.png" alt="CPlot" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b><br>
-                        <b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>European Conference on Computer Vision (ECCV), 2024</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A click prompt learning method with optimal transport for interactive segmentation to improve interaction efficiency.</span><br>
-                        [<a href="https://jliu4ai.github.io/cplot_projectpage" target="_blank">Project</a>]
-                        [<a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/cplot" target="_blank">Code</a>]
+                        <span data-lang="en"><b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b></span>
+                        <span data-lang="zh"><b>CPlot：面向交互式分割的最优传输点击提示学习</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>European Conference on Computer Vision (ECCV), 2024</b></span>
+                        <span data-lang="zh"><b>欧洲计算机视觉会议（ECCV），2024</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A click prompt learning method with optimal transport for interactive segmentation to improve interaction efficiency.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种结合最优传输的点击提示学习方法，提高交互式分割效率。</span></span><br>
+                        [<a href="https://jliu4ai.github.io/cplot_projectpage" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
+                        [<a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/cplot" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -474,12 +577,16 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/DPA.png" alt="DPA" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b><br>
-                        <b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>International Conference on 3D Vision (3DV), 2024</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A prototype adaptation method for few-shot point cloud segmentation.</span><br>
-                        [<a href="https://arxiv.org/pdf/2209.05822" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/DPA" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b></span>
+                        <span data-lang="zh"><b>动态原型蒸馏的少样本点云分割</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>International Conference on 3D Vision (3DV), 2024</b></span>
+                        <span data-lang="zh"><b>国际 3D 视觉会议（3DV），2024</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A prototype adaptation method for few-shot point cloud segmentation.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种面向少样本点云分割的原型自适应方法。</span></span><br>
+                        [<a href="https://arxiv.org/pdf/2209.05822" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/DPA" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -487,12 +594,16 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/sigcn.png" alt="sigcn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b><br>
-                        <b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>British Machine Vision Conference (BMVC), 2022</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A graph convolutional network for few-shot semantic segmentation with support-induced structure.</span><br>
-                        [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b></span>
+                        <span data-lang="zh"><b>支持诱导图卷积的少样本语义分割</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>British Machine Vision Conference (BMVC), 2022</b></span>
+                        <span data-lang="zh"><b>英国机器视觉会议（BMVC），2022</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A graph convolutional network for few-shot semantic segmentation with support-induced structure.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种基于支持诱导结构的图卷积网络用于少样本语义分割。</span></span><br>
+                        [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -500,12 +611,16 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/dpcn.png" alt="dpcn" style="display: block; width: 150px; height: 80px; margin-right: 10px; flex-shrink: 0; object-fit: fill;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b><br>
-                        <b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves<br>
-                        <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b><br>
-                        <span style="color: #ff1744; font-size: 13px; font-weight: bold;">A dynamic prototype convolution network for few-shot semantic segmentation to improve model generalization.</span><br>
-                        [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b></span>
+                        <span data-lang="zh"><b>动态原型卷积网络用于少样本语义分割</b></span><br>
+                        <span data-lang="en"><b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves</span>
+                        <span data-lang="zh"><b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves</span><br>
+                        <span data-lang="en"><b>Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b></span>
+                        <span data-lang="zh"><b>计算机视觉与模式识别会议（CVPR），2022</b></span><br>
+                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A dynamic prototype convolution network for few-shot semantic segmentation to improve model generalization.</span></span>
+                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种动态原型卷积网络，用于提升少样本语义分割的泛化能力。</span></span><br>
+                        [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -513,11 +628,14 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/da.png" alt="da" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Domain Adaptation with Cauchy-Schwarz Divergence</b><br>
-                        Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</b><br>
-                        [<a href="https://arxiv.org/pdf/2405.19978" target="_blank">Paper</a>]
-                        [<a href="https://github.com/ywzcode/CS-adv" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Domain Adaptation with Cauchy-Schwarz Divergence</b></span>
+                        <span data-lang="zh"><b>基于柯西-施瓦茨散度的领域自适应</b></span><br>
+                        <span data-lang="en">Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh">Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</b></span>
+                        <span data-lang="zh"><b>不确定性人工智能会议（UAI），2024</b></span><br>
+                        [<a href="https://arxiv.org/pdf/2405.19978" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/ywzcode/CS-adv" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -525,11 +643,14 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/piclick.png" alt="piclick" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>PiClick: Picking the Desired Mask in Click-based Interactive Segmentation</b><br>
-                        Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves<br>
-                        <b>IEEE Transactions on Multimedia (TMM), 2023</b><br>
-                        [<a href="https://arxiv.org/pdf/2304.11609" target="_blank">Paper</a>]
-                        [<a href="https://github.com/cilinyan/PiClick" target="_blank">Code</a>]
+                        <span data-lang="en"><b>PiClick: Picking the Desired Mask in Click-based Interactive Segmentation</b></span>
+                        <span data-lang="zh"><b>PiClick：点击交互分割中的目标掩码选择</b></span><br>
+                        <span data-lang="en">Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves</span>
+                        <span data-lang="zh">Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>IEEE Transactions on Multimedia (TMM), 2023</b></span>
+                        <span data-lang="zh"><b>IEEE 多媒体汇刊（TMM），2023</b></span><br>
+                        [<a href="https://arxiv.org/pdf/2304.11609" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/cilinyan/PiClick" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -537,11 +658,14 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/fis.png" alt="fis" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Dynamic Transformer for Few-shot Instance Segmentation</b><br>
-                        Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves<br>
-                        <b>Proceedings of the 30th ACM International Conference on Multimedia (ACM MM), 2022</b><br>
-                        [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Dynamic Transformer for Few-shot Instance Segmentation</b></span>
+                        <span data-lang="zh"><b>动态 Transformer 用于少样本实例分割</b></span><br>
+                        <span data-lang="en">Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves</span>
+                        <span data-lang="zh">Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves</span><br>
+                        <span data-lang="en"><b>Proceedings of the 30th ACM International Conference on Multimedia (ACM MM), 2022</b></span>
+                        <span data-lang="zh"><b>第 30 届 ACM 国际多媒体会议（ACM MM），2022</b></span><br>
+                        [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -549,11 +673,14 @@
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
                       <img src="publication_jie/sagnn.png" alt="sagnn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
                       <div style="flex: 1; text-align: left;">
-                        <b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b><br>
-                        Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao<br>
-                        <b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b><br>
-                        [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank">Paper</a>]
-                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank">Code</a>]
+                        <span data-lang="en"><b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b></span>
+                        <span data-lang="zh"><b>尺度感知图神经网络用于少样本语义分割</b></span><br>
+                        <span data-lang="en">Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao</span>
+                        <span data-lang="zh">Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao</span><br>
+                        <span data-lang="en"><b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b></span>
+                        <span data-lang="zh"><b>计算机视觉与模式识别会议（CVPR），2021</b></span><br>
+                        [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
+                        [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
                     </div>
                   </li>
@@ -580,45 +707,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
   <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          includedLanguages: 'en,zh-CN',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-
-    function setTranslateLang(lang) {
-      const select = document.querySelector('select.goog-te-combo');
-      if (!select) return false;
-      select.value = lang;
-      select.dispatchEvent(new Event('change'));
-      return true;
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.getElementById('lang-toggle');
       if (!toggle) return;
-      const handleToggle = function () {
-        const select = document.querySelector('select.goog-te-combo');
-        const current = select ? select.value : 'en';
-        const next = current === 'zh-CN' ? 'en' : 'zh-CN';
-        const applied = setTranslateLang(next);
-        if (!applied) {
-          setTimeout(function () {
-            setTranslateLang(next);
-          }, 300);
-        }
-        toggle.textContent = next === 'zh-CN' ? 'English' : '中文';
+      const savedLang = localStorage.getItem('site-lang') || 'en';
+      document.body.setAttribute('data-lang', savedLang);
+      toggle.textContent = savedLang === 'zh' ? 'English' : '中文';
+
+      const switchLang = function () {
+        const current = document.body.getAttribute('data-lang') || 'en';
+        const next = current === 'zh' ? 'en' : 'zh';
+        document.body.setAttribute('data-lang', next);
+        localStorage.setItem('site-lang', next);
+        toggle.textContent = next === 'zh' ? 'English' : '中文';
       };
-      toggle.addEventListener('click', handleToggle);
-      toggle.addEventListener('touchstart', handleToggle, { passive: true });
+      toggle.addEventListener('click', switchLang);
+      toggle.addEventListener('touchstart', switchLang, { passive: true });
     });
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script id="search-hit-fuse-template" type="text/x-template">
     <div class="search-hit" id="summary-{{key}}">
       <div class="search-hit-content">
