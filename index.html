@@ -200,6 +200,24 @@
       margin-top: 0 !important;
       margin-bottom: 6px !important;
     }
+    .project-media {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .project-badge {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      background: #5b2dc9;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
     /* Language toggle button */
     .lang-toggle {
       position: fixed;
@@ -484,7 +502,10 @@
                 <ul class="publication-list" style="list-style: none; padding-left: 0; margin: 0;">
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <video src="publication_jie/FunHSI_Demo_Final.mp4" autoplay loop muted playsinline preload="metadata" style="display: block; width: 150px; height: 100px; object-fit: contain; background: #000; margin-right: 10px; flex-shrink: 0;"></video>
+                      <div class="project-media">
+                        <span class="project-badge">arXiv'26</span>
+                        <video src="publication_jie/FunHSI_Demo_Final.mp4" autoplay loop muted playsinline preload="metadata" style="display: block; width: 150px; height: 100px; object-fit: contain; background: #000; margin-right: 10px; flex-shrink: 0;"></video>
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Open-Vocabulary Functional 3D Human-Scene Interaction Generation</b></span>
                         <span data-lang="zh"><b>开放词汇的功能性三维人-场景交互生成</b></span><br>
@@ -503,7 +524,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/UniAlign.png" alt="UniAlign" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">arXiv'26</span>
+                        <img src="publication_jie/UniAlign.png" alt="UniAlign" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Towards Uniformity and Alignment for Multimodal Representation Learning</b></span>
                         <span data-lang="zh"><b>面向多模态表征学习的统一性与对齐</b></span><br>
@@ -519,7 +543,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/fewclip_iccv2025.gif" alt="Probabilistic Calibration" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">ICCV'25</span>
+                        <img src="publication_jie/fewclip_iccv2025.gif" alt="Probabilistic Calibration" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Probabilistic Prototype Calibration of Vision-language Models for Generalized Few-shot Semantic Segmentation</b></span>
                         <span data-lang="zh"><b>面向广义小样本语义分割的视觉-语言模型概率原型校准</b></span><br>
@@ -536,7 +563,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/NPISeg3D.gif" alt="NPISeg3D" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">ICML'25</span>
+                        <img src="publication_jie/NPISeg3D.gif" alt="NPISeg3D" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>NPISeg3D: Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</b></span>
                         <span data-lang="zh"><b>NPISeg3D：层级神经过程的概率交互式 3D 分割</b></span><br>
@@ -554,7 +584,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="media/capo.gif" alt="CaPo Demo" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">ICLR'25</span>
+                        <img src="media/capo.gif" alt="CaPo Demo" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>CaPo: Cooperative Plan Optimization for Efficient Embodied Multi-agent Cooperation</b></span>
                         <span data-lang="zh"><b>CaPo：高效具身多智能体协作的协同计划优化</b></span><br>
@@ -572,7 +605,10 @@
                   <!-- CPlot 项目 -->
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/cplot.png" alt="CPlot" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">ECCV'24</span>
+                        <img src="publication_jie/cplot.png" alt="CPlot" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>CPlot: Click Prompt Learning with Optimal Transport for Interactive Segmentation</b></span>
                         <span data-lang="zh"><b>CPlot：面向交互式分割的最优传输点击提示学习</b></span><br>
@@ -591,7 +627,10 @@
                   <!-- 第三项：增加图片介绍 -->
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/DPA.png" alt="DPA" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">3DV'24</span>
+                        <img src="publication_jie/DPA.png" alt="DPA" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Dynamic Prototype Adaptation with Distillation for Few-shot Point Cloud Segmentation</b></span>
                         <span data-lang="zh"><b>动态原型蒸馏的少样本点云分割</b></span><br>
@@ -608,7 +647,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/sigcn.png" alt="sigcn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">BMVC'22</span>
+                        <img src="publication_jie/sigcn.png" alt="sigcn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Few-shot Semantic Segmentation with Support-Induced Graph Convolutional Network</b></span>
                         <span data-lang="zh"><b>支持诱导图卷积的少样本语义分割</b></span><br>
@@ -625,7 +667,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/dpcn.png" alt="dpcn" style="display: block; width: 150px; height: 80px; margin-right: 10px; flex-shrink: 0; object-fit: fill;">
+                      <div class="project-media">
+                        <span class="project-badge">CVPR'22</span>
+                        <img src="publication_jie/dpcn.png" alt="dpcn" style="display: block; width: 150px; height: 80px; margin-right: 10px; flex-shrink: 0; object-fit: fill;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Dynamic Prototype Convolution Network for Few-shot Semantic Segmentation</b></span>
                         <span data-lang="zh"><b>动态原型卷积网络用于少样本语义分割</b></span><br>
@@ -642,7 +687,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/da.png" alt="da" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">UAI'24</span>
+                        <img src="publication_jie/da.png" alt="da" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Domain Adaptation with Cauchy-Schwarz Divergence</b></span>
                         <span data-lang="zh"><b>基于柯西-施瓦茨散度的领域自适应</b></span><br>
@@ -657,7 +705,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/piclick.png" alt="piclick" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">TMM'23</span>
+                        <img src="publication_jie/piclick.png" alt="piclick" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>PiClick: Picking the Desired Mask in Click-based Interactive Segmentation</b></span>
                         <span data-lang="zh"><b>PiClick：点击交互分割中的目标掩码选择</b></span><br>
@@ -672,7 +723,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/fis.png" alt="fis" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">ACM MM'22</span>
+                        <img src="publication_jie/fis.png" alt="fis" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Dynamic Transformer for Few-shot Instance Segmentation</b></span>
                         <span data-lang="zh"><b>动态 Transformer 用于少样本实例分割</b></span><br>
@@ -687,7 +741,10 @@
                   </li>
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
-                      <img src="publication_jie/sagnn.png" alt="sagnn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      <div class="project-media">
+                        <span class="project-badge">CVPR'21</span>
+                        <img src="publication_jie/sagnn.png" alt="sagnn" style="display: block; width: 150px; height: auto; margin-right: 10px; flex-shrink: 0;">
+                      </div>
                       <div style="flex: 1; text-align: left;">
                         <span data-lang="en"><b>Scale-aware Graph Neural Network for Few-shot Semantic Segmentation</b></span>
                         <span data-lang="zh"><b>尺度感知图神经网络用于少样本语义分割</b></span><br>
