@@ -137,9 +137,46 @@
     }
     /* 访客地图容器样式 */
     .visitor-map-container {
-      width: 50%;
-      margin: 50px auto 20px auto;
+      width: min(620px, 100%);
+      margin: 54px auto 20px auto;
       text-align: center;
+    }
+    .visitor-map-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .visitor-map-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4f46e5;
+      box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.12);
+    }
+    .visitor-map {
+      min-height: 170px;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+    .visitor-map a {
+      color: #4f46e5;
+      font-weight: 700;
+    }
+    .visitor-map img,
+    .visitor-map iframe,
+    .visitor-map canvas {
+      max-width: 100% !important;
+      height: auto;
     }
     /* —— 大屏下固定左侧部分 —— */
     @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -173,21 +210,34 @@
         font-size: 16px;
       }
     }
-    /* 让项目列表极其紧凑，移除所有内部元素的间距 */
+    /* Recent project cards */
     body .page-body .content-wrapper ul.publication-list > li,
     body .page-body .content-wrapper ul.publication-list > li * {
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
     }
     body .page-body .content-wrapper ul.publication-list > li {
-      margin-bottom: 24px !important;
+      margin-bottom: 18px !important;
+      padding: 14px !important;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    body .page-body .content-wrapper ul.publication-list > li:hover {
+      transform: translateY(-2px);
+      border-color: #c7d2fe;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.11);
     }
     body .page-body .content-wrapper ul.publication-list > li:last-child {
       margin-bottom: 0 !important;
     }
     body .page-body .content-wrapper ul.publication-list > li > div {
-      align-items: center !important;
-      gap: 12px;
+      display: grid !important;
+      grid-template-columns: 166px minmax(0, 1fr);
+      align-items: start !important;
+      gap: 16px;
     }
     body .page-body .content-wrapper ul.publication-list > li > div > div {
       align-items: center;
@@ -195,6 +245,7 @@
     body .page-body .content-wrapper ul.publication-list img {
       margin-top: 0 !important;
       display: block !important;
+      max-width: 100%;
     }
     /* Reduce gap between the last paragraph and the next section heading */
     body .page-body .content-wrapper .article-style p:last-child {
@@ -212,19 +263,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       flex-shrink: 0;
-      width: 150px;
+      width: 166px;
     }
     .project-badge {
-      background: #5b2dc9;
+      background: #111827;
       color: #ffffff;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
+      padding: 4px 10px;
+      border-radius: 6px;
       letter-spacing: 0.02em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 10px rgba(17, 24, 39, 0.18);
       line-height: 1.2;
       width: 100%;
       text-align: center;
@@ -233,28 +284,52 @@
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 6px 0 5px;
+      gap: 7px;
+      margin: 7px 0 6px !important;
     }
     .project-tag {
       display: inline-flex;
       align-items: center;
-      border: 1px solid #4f46e5;
-      background: #4f46e5;
-      color: #ffffff;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1d4ed8;
       font-size: 12px;
       font-weight: 700;
       line-height: 1.2;
-      padding: 4px 10px;
-      border-radius: 999px;
-      box-shadow: 0 5px 12px rgba(79, 70, 229, 0.24);
+      padding: 4px 9px;
+      border-radius: 6px;
       letter-spacing: 0.02em;
       white-space: nowrap;
+    }
+    .project-tag:nth-child(4n+3),
+    .project-tag:nth-child(4n+4) {
+      border-color: #bbf7d0;
+      background: #f0fdf4;
+      color: #15803d;
     }
     .project-media img,
     .project-media video {
       margin-right: 0 !important;
-      width: 100%;
+      width: 100% !important;
+      height: 96px !important;
+      object-fit: contain !important;
+      padding: 8px;
+      border: 1px solid #f1f5f9;
+      border-radius: 8px;
+      background: #f8fafc;
+      box-sizing: border-box;
+    }
+    body .page-body .content-wrapper ul.publication-list > li > div > div:last-child {
+      font-size: 14px;
+      line-height: 1.42;
+    }
+    body .page-body .content-wrapper ul.publication-list > li > div > div:last-child > span:first-child,
+    body .page-body .content-wrapper ul.publication-list > li > div > div:last-child > span:first-child + span {
+      font-size: 15px;
+      line-height: 1.35;
+    }
+    body .page-body .content-wrapper ul.publication-list a {
+      font-weight: 700;
     }
     /* Language toggle button */
     .lang-toggle {
@@ -280,6 +355,30 @@
         right: 10px;
         padding: 6px 10px;
         font-size: 12px;
+      }
+      body .page-body .content-wrapper ul.publication-list > li {
+        padding: 12px !important;
+      }
+      body .page-body .content-wrapper ul.publication-list > li > div {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 12px;
+      }
+      .project-media {
+        width: 112px;
+      }
+      .project-media img,
+      .project-media video {
+        height: 74px !important;
+        padding: 5px;
+      }
+      .project-badge {
+        font-size: 10px;
+        padding: 4px 6px;
+      }
+      .project-tag {
+        font-size: 11px;
+        padding: 3px 7px;
+        white-space: normal;
       }
     }
     body[data-lang="en"] [data-lang="zh"] { display: none; }
@@ -907,7 +1006,16 @@
               </div>
               <!-- 访客地图 -->
               <div class="visitor-map-container">
-                <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
+                <div class="visitor-map-title">
+                  <span data-lang="en">Visitor Map</span>
+                  <span data-lang="zh">访问地图</span>
+                </div>
+                <div class="visitor-map" aria-label="Visitor map">
+                  <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=520&t=tt&d=zoRyOwVabxYy8pKXTEHm298M6YYDT9dmnyf3mucKRt4"></script>
+                  <noscript>
+                    <a href="https://clustrmaps.com/" title="Visit tracker">View visitor map</a>
+                  </noscript>
+                </div>
               </div>
             </div><!-- end content-wrapper -->
           </div><!-- end right-side col -->
