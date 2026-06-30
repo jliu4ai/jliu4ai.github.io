@@ -230,6 +230,25 @@
       text-align: center;
       box-sizing: border-box;
     }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 4px 0 3px;
+    }
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #c7d2fe;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
     .project-media img,
     .project-media video {
       margin-right: 0 !important;
@@ -530,8 +549,12 @@
                         <span data-lang="zh">Hui Xie, <b>Jie Liu</b>, Ziyue Qiao, Joaquin Vanschoren</span><br>
                         <span data-lang="en"><b>arXiv, 2026</b></span>
                         <span data-lang="zh"><b>arXiv，2026</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">SLT adaptively compresses redundant reasoning spans into latent representations while keeping precision-critical steps as explicit CoT, improving the accuracy-efficiency trade-off for LLM reasoning.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">SLT 将冗余推理片段自适应压缩为潜在表示，同时保留精度关键步骤为显式 CoT，从而提升 LLM 推理的准确率与效率平衡。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">LLM Reasoning</span>
+                          <span class="project-tag" data-lang="zh">LLM 推理</span>
+                          <span class="project-tag" data-lang="en">Latent Reasoning</span>
+                          <span class="project-tag" data-lang="zh">潜在推理</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2605.25745v1" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/hunshi34/SLT" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -550,8 +573,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Yu Sun, Alpár Cseke, Yao Feng, Nicolas Hron, Michael J. Black, Yan Zhang</span><br>
                         <span data-lang="en"><b>arXiv, 2026 — work done as an intern at Meshcapade</b></span>
                         <span data-lang="zh"><b>arXiv，2026 — 在 Meshcapade 实习期间完成</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">FunHSI is a training-free framework that generates physically plausible and functionally correct 3D human-scene interactions from open-vocabulary prompts and posed RGB-D images.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">FunHSI 是一个无需训练的框架，可从开放词汇提示与有位姿的 RGB-D 图像生成物理可行且功能正确的 3D 人-场景交互。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Embodied Agent</span>
+                          <span class="project-tag" data-lang="zh">具身智能体</span>
+                          <span class="project-tag" data-lang="en">Human-Scene Interaction</span>
+                          <span class="project-tag" data-lang="zh">人-场景交互</span>
+                        </div>
                         [<a href="https://jliu4ai.github.io/projects/funhsi/" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
                         [<a href="https://arxiv.org/pdf/2601.20835" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://youtu.be/0wKSViA_39A" target="_blank"><span data-lang="en">Video</span><span data-lang="zh">视频</span></a>]
@@ -572,8 +599,12 @@
                         <span data-lang="zh">Wenzhe Yin, Pan Zhou, Zehao Xiao, <b>Jie Liu</b>, Shujian Yu, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>International Conference on Machine Learning (ICML), 2026</b></span>
                         <span data-lang="zh"><b>国际机器学习大会（ICML），2026</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">UniAlign provides a conflict-free multimodal representation learning recipe by decoupling alignment from uniformity and utilizing an anchor-based strategy to eliminate competing alignment directions.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">UniAlign 通过将对齐与统一性解耦，并采用基于锚点的策略消除竞争性对齐方向，提供一种无冲突的多模态表征学习方法。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Multimodal Learning</span>
+                          <span class="project-tag" data-lang="zh">多模态学习</span>
+                          <span class="project-tag" data-lang="en">Representation Learning</span>
+                          <span class="project-tag" data-lang="zh">表征学习</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2602.09507" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                       </div>
                     </div>
@@ -591,8 +622,12 @@
                         <span data-lang="zh">Pengyu Zhang, Klim Zaporojets, <b>Jie Liu</b>, Jia-Hong Huang, Paul Groth</span><br>
                         <span data-lang="en"><b>European Semantic Web Conference (ESWC), 2026</b></span>
                         <span data-lang="zh"><b>欧洲语义网会议（ESWC），2026</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A framework for enriching multi-modal knowledge graph datasets beyond images.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种增强多模态知识图谱数据集的方法。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Multimodal Learning</span>
+                          <span class="project-tag" data-lang="zh">多模态学习</span>
+                          <span class="project-tag" data-lang="en">Knowledge Graph</span>
+                          <span class="project-tag" data-lang="zh">知识图谱</span>
+                        </div>
                         [<a href="" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -611,8 +646,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Jiayi Shen, Pan Zhou, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>International Conference on Computer Vision (ICCV), 2025</b></span>
                         <span data-lang="zh"><b>国际计算机视觉大会（ICCV），2025</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic prototype calibration method of vision-language models for generalized few-shot segmentation to improve model generalization without forgetting.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种概率原型校准方法，用于广义小样本分割，提升模型泛化能力并减缓遗忘。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Vision-Language Model</span>
+                          <span class="project-tag" data-lang="zh">视觉语言模型</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2506.22979" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/FewCLIP" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -631,8 +670,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>International Conference on Machine Learning (ICML), 2025</b></span>
                         <span data-lang="zh"><b>国际机器学习大会（ICML），2025</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A probabilistic method for interactive 3D segmentation to facilitate uncertainty estimation and few-shot generalization.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种用于交互式 3D 分割的概率方法，支持不确定性估计与小样本泛化。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">3D Perception</span>
+                          <span class="project-tag" data-lang="zh">3D 感知</span>
+                        </div>
                         [<a href="https://jliu4ai.github.io/NPISeg3D_projectpage/" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
                         [<a href="/media/NPISeg3D.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/NPISeg3D" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
@@ -652,8 +695,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Pan Zhou, Yingjun Du, Ah-Hwee Tan, Cees GM Snoek, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>International Conference on Learning Representations (ICLR), 2025</b></span>
                         <span data-lang="zh"><b>国际学习表征会议（ICLR），2025</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">An efficient plan optimization method with LLMs for embodied multi-agent cooperation.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种结合 LLMs 的高效计划优化方法，用于具身多智能体协作。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Embodied Agent</span>
+                          <span class="project-tag" data-lang="zh">具身智能体</span>
+                          <span class="project-tag" data-lang="en">LLM Planning</span>
+                          <span class="project-tag" data-lang="zh">LLM 规划</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2411.04679" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/capo" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -673,8 +720,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>European Conference on Computer Vision (ECCV), 2024</b></span>
                         <span data-lang="zh"><b>欧洲计算机视觉会议（ECCV），2024</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A click prompt learning method with optimal transport for interactive segmentation to improve interaction efficiency.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种结合最优传输的点击提示学习方法，提高交互式分割效率。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Interactive Perception</span>
+                          <span class="project-tag" data-lang="zh">交互式感知</span>
+                        </div>
                         [<a href="https://jliu4ai.github.io/cplot_projectpage" target="_blank"><span data-lang="en">Project</span><span data-lang="zh">项目</span></a>]
                         [<a href="https://fq.pkwyx.com/default/https/www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04816.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/cplot" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
@@ -695,8 +746,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Wenzhe Yin, Haochen Wang, Yunlu Chen, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>International Conference on 3D Vision (3DV), 2024</b></span>
                         <span data-lang="zh"><b>国际 3D 视觉会议（3DV），2024</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A prototype adaptation method for few-shot point cloud segmentation.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种面向少样本点云分割的原型自适应方法。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">3D Perception</span>
+                          <span class="project-tag" data-lang="zh">3D 感知</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2209.05822" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/DPA" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -715,8 +770,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Yanqi Bao, Haochen Wang, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>British Machine Vision Conference (BMVC), 2022</b></span>
                         <span data-lang="zh"><b>英国机器视觉会议（BMVC），2022</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A graph convolutional network for few-shot semantic segmentation with support-induced structure.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种基于支持诱导结构的图卷积网络用于少样本语义分割。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Few-shot Learning</span>
+                          <span class="project-tag" data-lang="zh">小样本学习</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2301.03194https://arxiv.org/pdf/2203.13865" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -735,8 +794,12 @@
                         <span data-lang="zh"><b>Jie Liu</b>, Yanqi Bao, Guosen Xie, Huan Xiong, Jan-Jakob Sonke, E Gavves</span><br>
                         <span data-lang="en"><b>Conference on Computer Vision and Pattern Recognition (CVPR), 2022</b></span>
                         <span data-lang="zh"><b>计算机视觉与模式识别会议（CVPR），2022</b></span><br>
-                        <span data-lang="en"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">A dynamic prototype convolution network for few-shot semantic segmentation to improve model generalization.</span></span>
-                        <span data-lang="zh"><span style="color: #ff1744; font-size: 13px; font-weight: bold;">一种动态原型卷积网络，用于提升少样本语义分割的泛化能力。</span></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Few-shot Learning</span>
+                          <span class="project-tag" data-lang="zh">小样本学习</span>
+                        </div>
                         [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Liu_Dynamic_Prototype_Convolution_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2022_paper.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -755,6 +818,12 @@
                         <span data-lang="zh">Wenzhe Yin, Shujian Yu, Yicong Lin, <b>Jie Liu</b>, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>Conference on Uncertainty in Artificial Intelligence (UAI), 2024</b></span>
                         <span data-lang="zh"><b>不确定性人工智能会议（UAI），2024</b></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Domain Adaptation</span>
+                          <span class="project-tag" data-lang="zh">领域自适应</span>
+                          <span class="project-tag" data-lang="en">Representation Learning</span>
+                          <span class="project-tag" data-lang="zh">表征学习</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2405.19978" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/ywzcode/CS-adv" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -773,6 +842,12 @@
                         <span data-lang="zh">Cilin Yan, Haochen Wang, <b>Jie Liu</b>, Xiaolong Jiang, Yao Hu, Xu Tang, Guoliang Kang, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>IEEE Transactions on Multimedia (TMM), 2023</b></span>
                         <span data-lang="zh"><b>IEEE 多媒体汇刊（TMM），2023</b></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Interactive Perception</span>
+                          <span class="project-tag" data-lang="zh">交互式感知</span>
+                        </div>
                         [<a href="https://arxiv.org/pdf/2304.11609" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/cilinyan/PiClick" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -791,6 +866,12 @@
                         <span data-lang="zh">Haochen Wang, <b>Jie Liu</b>, Yongtuo Liu, Subhransu Maji, Jan-Jakob Sonke, Efstratios Gavves</span><br>
                         <span data-lang="en"><b>Proceedings of the 30th ACM International Conference on Multimedia (ACM MM), 2022</b></span>
                         <span data-lang="zh"><b>第 30 届 ACM 国际多媒体会议（ACM MM），2022</b></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Few-shot Learning</span>
+                          <span class="project-tag" data-lang="zh">小样本学习</span>
+                        </div>
                         [<a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548227" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
@@ -809,6 +890,12 @@
                         <span data-lang="zh">Guo-senXie*, <b>Jie Liu</b>*, HuanXiong, LingShao</span><br>
                         <span data-lang="en"><b>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</b></span>
                         <span data-lang="zh"><b>计算机视觉与模式识别会议（CVPR），2021</b></span><br>
+                        <div class="project-tags">
+                          <span class="project-tag" data-lang="en">Segmentation</span>
+                          <span class="project-tag" data-lang="zh">分割</span>
+                          <span class="project-tag" data-lang="en">Few-shot Learning</span>
+                          <span class="project-tag" data-lang="zh">小样本学习</span>
+                        </div>
                         [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xie_Scale-Aware_Graph_Neural_Network_for_Few-Shot_Semantic_Segmentation_CVPR_2021_paper.pdf" target="_blank"><span data-lang="en">Paper</span><span data-lang="zh">论文</span></a>]
                         [<a href="https://github.com/jliu4ai/fewshot-pc" target="_blank"><span data-lang="en">Code</span><span data-lang="zh">代码</span></a>]
                       </div>
