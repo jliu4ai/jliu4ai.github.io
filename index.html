@@ -434,6 +434,10 @@
     body .page-body .col-12 .content-wrapper > h3:first-child { margin-top:56px !important; }
     .project-media { align-items:flex-start !important; gap:8px; }
     .project-badge { position:static; align-self:flex-start; background:#eef2ff; color:#3730a3; }
+    .pub-note { font-style:normal; font-weight:500; color:var(--muted); font-size:13.5px; }
+    body .page-body .col-12 .content-wrapper ul.publication-list > li > div { align-items:center !important; }
+    body .page-body .col-12 .content-wrapper ul.publication-list > li > div > .project-media { align-self:center; justify-content:center; }
+    body .page-body .col-12 .content-wrapper ul.publication-list .project-media > img, body .page-body .col-12 .content-wrapper ul.publication-list .project-media > video { margin:0 !important; }
     .pub-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 20px; }
     .pub-tab { display:inline-flex; align-items:center; gap:8px; font:inherit; font-size:14.5px; font-weight:600; color:#475569;
       background:#fff; border:1px solid #e2e8f0; border-radius:999px; padding:8px 18px; cursor:pointer; transition:all .15s; }
@@ -734,10 +738,10 @@
                       <div style="flex: 1; text-align: left;">
                         <span class="pub-title" data-lang="en">Selective Latent Thinking: Adaptive Compression of LLM Reasoning Chains</span>
                         <span class="pub-title" data-lang="zh">选择性潜在思考：LLM 推理链的自适应压缩</span><br>
-                        <span data-lang="en">Hui Xie*, <b>Jie Liu</b>*, Ziyue Qiao, Joaquin Vanschoren (*equal contribution)</span>
-                        <span data-lang="zh">Hui Xie*, <b>Jie Liu</b>*, Ziyue Qiao, Joaquin Vanschoren（*共同一作）</span><br>
-                        <span class="pub-venue" data-lang="en">arXiv, 2026</span>
-                        <span class="pub-venue" data-lang="zh">arXiv，2026</span><br>
+                        <span data-lang="en">Hui Xie*, <b>Jie Liu</b>*, Ziyue Qiao, Joaquin Vanschoren</span>
+                        <span data-lang="zh">Hui Xie*, <b>Jie Liu</b>*, Ziyue Qiao, Joaquin Vanschoren</span><br>
+                        <span class="pub-venue" data-lang="en">arXiv, 2026 <span class="pub-note">(*equal contribution)</span></span>
+                        <span class="pub-venue" data-lang="zh">arXiv，2026 <span class="pub-note">（*共同一作）</span></span><br>
                         <div class="project-tags">
                           <span class="project-tag" data-lang="en">LLM Reasoning</span>
                           <span class="project-tag" data-lang="zh">LLM 推理</span>
