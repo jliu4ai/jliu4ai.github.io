@@ -434,6 +434,15 @@
     body .page-body .col-12 .content-wrapper > h3:first-child { margin-top:56px !important; }
     .project-media { align-items:flex-start !important; gap:8px; }
     .project-badge { position:static; align-self:flex-start; background:#eef2ff; color:#3730a3; }
+    .pub-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 20px; }
+    .pub-tab { display:inline-flex; align-items:center; gap:8px; font:inherit; font-size:14.5px; font-weight:600; color:#475569;
+      background:#fff; border:1px solid #e2e8f0; border-radius:999px; padding:8px 18px; cursor:pointer; transition:all .15s; }
+    .pub-tab:hover { border-color:#cbd5e1; color:var(--ink); }
+    .pub-tab.is-active { background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 4px 12px rgba(29,78,216,.25); }
+    .pub-count { font-size:12px; font-weight:700; background:#f1f5f9; color:#475569; border-radius:999px; padding:1px 8px; }
+    .pub-tab.is-active .pub-count { background:rgba(255,255,255,.22); color:#fff; }
+    .pub-panel[hidden] { display:none !important; }
+    .pub-panel { animation:fadeIn .25s ease; }
     @media (max-width: 991px) {
       #profile .news-container { max-height:320px; overflow-y:auto; }
       body .page-body .col-12 .content-wrapper > h3:first-child { margin-top:8px !important; }
@@ -701,10 +710,20 @@
                 </p>
               </div>
               <h3 id="publications">
-                <span data-lang="en">Selected Publications</span>
-                <span data-lang="zh">代表性论文</span>
+                <span data-lang="en">Publications</span>
+                <span data-lang="zh">论文</span>
               </h3>
-              <div class="article-style">
+              <div class="pub-tabs" role="tablist">
+                <button type="button" class="pub-tab is-active" role="tab" aria-selected="true" aria-controls="pub-selected" data-target="pub-selected">
+                  <span data-lang="en">Selected Publications</span><span data-lang="zh">代表性论文</span>
+                  <span class="pub-count">7</span>
+                </button>
+                <button type="button" class="pub-tab" role="tab" aria-selected="false" aria-controls="pub-other" data-target="pub-other">
+                  <span data-lang="en">Other Publications</span><span data-lang="zh">其他论文</span>
+                  <span class="pub-count">8</span>
+                </button>
+              </div>
+              <div class="article-style pub-panel" id="pub-selected" role="tabpanel">
                 <ul class="publication-list" style="list-style: none; padding-left: 0; margin: 0;">
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
@@ -908,11 +927,7 @@
                   </li>
                 </ul>
               </div>
-              <h3 id="projects">
-                <span data-lang="en">Other Publications</span>
-                <span data-lang="zh">其他论文</span>
-              </h3>
-              <div class="article-style">
+              <div class="article-style pub-panel" id="pub-other" role="tabpanel" hidden>
                 <ul class="publication-list" style="list-style: none; padding-left: 0; margin: 0;">
                   <li>
                     <div style="display: flex; width: 100%; align-items: center; justify-content: flex-start;">
@@ -1181,6 +1196,17 @@
       };
       toggle.addEventListener('click', switchLang);
       toggle.addEventListener('touchstart', switchLang, { passive: true });
+
+      document.querySelectorAll('.pub-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          document.querySelectorAll('.pub-tab').forEach(function (t) {
+            const on = t === tab;
+            t.classList.toggle('is-active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            document.getElementById(t.dataset.target).hidden = !on;
+          });
+        });
+      });
 
       document.querySelectorAll('.visitor-map-fallback, .visitor-map-note').forEach(function (element) {
         element.remove();
