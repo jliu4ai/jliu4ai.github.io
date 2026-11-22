@@ -720,7 +720,7 @@
               <div class="pub-tabs" role="tablist">
                 <button type="button" class="pub-tab is-active" role="tab" aria-selected="true" aria-controls="pub-selected" data-target="pub-selected">
                   <span data-lang="en">Selected Publications</span><span data-lang="zh">代表性论文</span>
-                  <span class="pub-count">7</span>
+                  <span class="pub-count">9</span>
                 </button>
                 <button type="button" class="pub-tab" role="tab" aria-selected="false" aria-controls="pub-other" data-target="pub-other">
                   <span data-lang="en">Other Publications</span><span data-lang="zh">其他论文</span>
@@ -1258,6 +1258,9 @@
       toggle.addEventListener('touchstart', switchLang, { passive: true });
 
       document.querySelectorAll('.pub-tab').forEach(function (tab) {
+        const panel = document.getElementById(tab.dataset.target);
+        const count = tab.querySelector('.pub-count');
+        if (panel && count) count.textContent = panel.querySelectorAll('.publication-list > li').length;
         tab.addEventListener('click', function () {
           document.querySelectorAll('.pub-tab').forEach(function (t) {
             const on = t === tab;
